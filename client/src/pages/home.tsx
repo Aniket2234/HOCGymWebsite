@@ -111,11 +111,11 @@ export default function Home() {
               HOME
             </button>
             <button 
-              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })}
               className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              <Info className="h-4 w-4" />
-              ABOUT US
+              <Activity className="h-4 w-4" />
+              PROGRAM
             </button>
             <button 
               onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
@@ -125,11 +125,11 @@ export default function Home() {
               PRICING
             </button>
             <button 
-              onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('trainers')?.scrollIntoView({ behavior: 'smooth' })}
               className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              <MessageSquare className="h-4 w-4" />
-              TESTIMONIALS
+              <Users className="h-4 w-4" />
+              TRAINERS
             </button>
             <button 
               onClick={() => document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' })}
@@ -335,7 +335,7 @@ export default function Home() {
       </section>
 
       {/* Transformation Gallery */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24" id="transformations">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -365,7 +365,7 @@ export default function Home() {
       </section>
 
       {/* Program Details */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-[#c026d3]/5">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-[#c026d3]/5" id="program">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
@@ -577,7 +577,7 @@ export default function Home() {
       </section>
 
       {/* Meet Trainers */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-[#c026d3]/5">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-[#c026d3]/5" id="trainers">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
