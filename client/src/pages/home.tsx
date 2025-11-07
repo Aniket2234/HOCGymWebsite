@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { 
@@ -35,18 +36,29 @@ import {
   Info,
   DollarSign,
   MessageSquare,
-  TrendingUp
+  TrendingUp,
+  Menu
 } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import heroImage from "@assets/generated_images/Hero_fitness_workout_woman_6806a3a8.png";
 import transformationImage from "@assets/generated_images/Transformation_before_after_results_1ed81a38.png";
 import onlineClassImage from "@assets/generated_images/Online_fitness_class_women_c03f2b22.png";
 import trainerImage from "@assets/generated_images/Fitness_trainer_professional_portrait_9ee854b5.png";
+import cardioImage from "@assets/generated_images/Woman_doing_cardio_workout_1ba27fe8.png";
+import functionalImage from "@assets/generated_images/Functional_training_exercise_e1989ece.png";
+import strengthImage from "@assets/generated_images/Strength_training_with_weights_f007c33a.png";
+import mobilityImage from "@assets/generated_images/Mobility_and_flexibility_exercise_26512ec9.png";
+import yogaImage from "@assets/generated_images/Yoga_meditation_pose_691f5267.png";
+import zumbaImage from "@assets/generated_images/Zumba_dance_fitness_class_875f492b.png";
 
 const WHATSAPP_NUMBER = "918600126395";
+const PHONE_NUMBER = "+91 8600126395";
 
 export default function Home() {
   const { toast } = useToast();
+  const [callDialogOpen, setCallDialogOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -91,17 +103,66 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       {/* Navigation Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-20 items-center justify-between">
+        <div className="container flex h-20 items-center justify-between px-4 md:px-6">
           <div className="flex items-center gap-2">
             <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
               <Dumbbell className="h-6 w-6 text-primary-foreground" />
             </div>
-            <span className="font-heading text-2xl font-bold text-primary">
+            <span className="font-heading text-xl md:text-2xl font-bold text-primary">
               Hoc Fitness
             </span>
           </div>
           
-          {/* Navigation Menu */}
+          {/* Mobile Menu */}
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger asChild className="lg:hidden">
+              <Button variant="outline" size="icon" className="h-10 w-10">
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px]">
+              <nav className="flex flex-col gap-6 mt-8">
+                <button 
+                  onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setMobileMenuOpen(false); }}
+                  className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  HOME
+                </button>
+                <button 
+                  onClick={() => { document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
+                  className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  PROGRAM
+                </button>
+                <button 
+                  onClick={() => { document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
+                  className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  PRICING
+                </button>
+                <button 
+                  onClick={() => { document.getElementById('trainers')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
+                  className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  TRAINERS
+                </button>
+                <button 
+                  onClick={() => { document.getElementById('transformations')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
+                  className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  BEFORE & AFTER
+                </button>
+                <button 
+                  onClick={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
+                  className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  CONTACT
+                </button>
+              </nav>
+            </SheetContent>
+          </Sheet>
+          
+          {/* Desktop Navigation Menu */}
           <nav className="hidden lg:flex items-center gap-8">
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -141,21 +202,57 @@ export default function Home() {
             </button>
           </nav>
           
-          <Button onClick={openWhatsApp} size="lg" className="rounded-full" data-testid="button-book-call-header">
-            <Phone className="h-4 w-4 mr-2" />
-            Book A Free Call
-          </Button>
+          <div className="hidden lg:flex items-center gap-3">
+            <Dialog open={callDialogOpen} onOpenChange={setCallDialogOpen}>
+              <DialogTrigger asChild>
+                <Button variant="outline" size="icon" className="rounded-full h-12 w-12">
+                  <Phone className="h-5 w-5" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle>Call Us Now</DialogTitle>
+                  <DialogDescription>
+                    Click the button below to call us directly
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="flex flex-col items-center gap-4 py-4">
+                  <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10">
+                    <Phone className="h-8 w-8 text-primary" />
+                  </div>
+                  <a 
+                    href={`tel:${PHONE_NUMBER}`}
+                    className="text-2xl font-bold text-primary hover:underline"
+                  >
+                    {PHONE_NUMBER}
+                  </a>
+                  <Button 
+                    size="lg" 
+                    className="w-full rounded-full"
+                    onClick={() => window.location.href = `tel:${PHONE_NUMBER}`}
+                  >
+                    <Phone className="h-5 w-5 mr-2" />
+                    Call Now
+                  </Button>
+                </div>
+              </DialogContent>
+            </Dialog>
+            <Button onClick={openWhatsApp} size="lg" className="rounded-full" data-testid="button-book-call-header">
+              <MessageCircle className="h-4 w-4 mr-2" />
+              Book A Free Call
+            </Button>
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-primary/10 via-background to-accent/30">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(217,70,239,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(192,38,211,0.08),transparent_50%)]" />
-        <div className="container py-20 md:py-32 relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-10">
-              <div className="inline-block">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(37,99,235,0.08),transparent_50%)]" />
+        <div className="container py-20 md:py-32 relative px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+            <div className="space-y-10 text-center lg:text-left">
+              <div className="flex justify-center lg:justify-start">
                 <div className="bg-gradient-to-r from-primary/20 to-accent/40 backdrop-blur-sm border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide">
                   ✨ India's #1 Online Fitness Program
                 </div>
@@ -166,10 +263,10 @@ export default function Home() {
                   Body & Mind
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-foreground/70 max-w-xl leading-relaxed">
+              <p className="text-xl md:text-2xl text-foreground/70 max-w-xl leading-relaxed mx-auto lg:mx-0">
                 Expert-led online fitness programs designed exclusively for women. Train anytime, anywhere.
               </p>
-              <div className="flex flex-wrap gap-5 pt-4">
+              <div className="flex flex-wrap gap-5 pt-4 justify-center lg:justify-start">
                 <Button 
                   onClick={openWhatsApp} 
                   size="lg" 
@@ -189,7 +286,7 @@ export default function Home() {
                   View Packages
                 </Button>
               </div>
-              <div className="flex items-center gap-8 pt-6">
+              <div className="flex flex-wrap items-center gap-4 md:gap-8 pt-6 justify-center lg:justify-start">
                 <div className="flex items-center gap-3">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
@@ -198,7 +295,7 @@ export default function Home() {
                   </div>
                   <span className="text-base font-semibold">4.8/5.0</span>
                 </div>
-                <div className="h-8 w-px bg-border" />
+                <div className="h-8 w-px bg-border hidden md:block" />
                 <div className="text-base font-semibold">
                   <span className="text-primary font-bold">1000+</span> Success Stories
                 </div>
@@ -220,7 +317,7 @@ export default function Home() {
 
       {/* Notice Banner */}
       <section className="bg-destructive/10 border-y border-destructive/20 py-4">
-        <div className="container">
+        <div className="container px-4 md:px-6">
           <p className="text-center text-sm md:text-base text-destructive font-medium">
             <strong>Note:</strong> We only offer online classes. No offline batches available.
           </p>
@@ -229,7 +326,7 @@ export default function Home() {
 
       {/* Contact Form Section */}
       <section className="py-24 md:py-32 bg-gradient-to-br from-primary/5 via-background to-accent/20" id="contact">
-        <div className="container">
+        <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
@@ -332,7 +429,7 @@ export default function Home() {
 
       {/* Transformation Gallery */}
       <section className="py-16 md:py-24" id="transformations">
-        <div className="container">
+        <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               <span className="text-primary">
@@ -361,8 +458,8 @@ export default function Home() {
       </section>
 
       {/* Program Details */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-[#c026d3]/5" id="program">
-        <div className="container">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-accent/10" id="program">
+        <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Only Designed For Ladies
@@ -396,7 +493,7 @@ export default function Home() {
 
       {/* Why Choose Us */}
       <section className="py-24 md:py-32">
-        <div className="container">
+        <div className="container px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
               Why Choose Us
@@ -454,7 +551,7 @@ export default function Home() {
 
       {/* Training Types */}
       <section className="py-24 md:py-32 bg-gradient-to-br from-primary/5 via-background to-accent/20">
-        <div className="container">
+        <div className="container px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
               Our Training Programs
@@ -463,18 +560,22 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: Flame, title: "Cardio Core", desc: "High-energy workouts that elevate your heart rate, boost endurance, and burn calories effectively." },
-              { icon: Zap, title: "Functional Training", desc: "Improve daily performance, reduce injury risk, and enhance flexibility with practical movements." },
-              { icon: Dumbbell, title: "Strength Training", desc: "Build muscle, increase power, and develop total body strength with progressive resistance workouts." },
-              { icon: Activity, title: "Mobility Exercise", desc: "Enhance your range of motion and reduce stiffness with targeted mobility work." },
-              { icon: Target, title: "Yoga Training", desc: "Holistic practice combining postures, breathwork, and meditation for mind-body harmony." },
-              { icon: Users, title: "Zumba / Aerobics", desc: "Fun cardio dance workouts that keep you active, energized, and engaged." },
+              { image: cardioImage, title: "Cardio Core", desc: "High-energy workouts that elevate your heart rate, boost endurance, and burn calories effectively." },
+              { image: functionalImage, title: "Functional Training", desc: "Improve daily performance, reduce injury risk, and enhance flexibility with practical movements." },
+              { image: strengthImage, title: "Strength Training", desc: "Build muscle, increase power, and develop total body strength with progressive resistance workouts." },
+              { image: mobilityImage, title: "Mobility Exercise", desc: "Enhance your range of motion and reduce stiffness with targeted mobility work." },
+              { image: yogaImage, title: "Yoga Training", desc: "Holistic practice combining postures, breathwork, and meditation for mind-body harmony." },
+              { image: zumbaImage, title: "Zumba / Aerobics", desc: "Fun cardio dance workouts that keep you active, energized, and engaged." },
             ].map((item, i) => (
-              <Card key={i} className="p-8 hover-elevate border-primary/10 shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all bg-gradient-to-br from-background to-accent/5">
-                <CardContent className="p-0 space-y-5">
-                  <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/30 flex items-center justify-center">
-                    <item.icon className="h-8 w-8 text-primary" />
-                  </div>
+              <Card key={i} className="overflow-hidden hover-elevate border-primary/10 shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all bg-gradient-to-br from-background to-accent/5">
+                <div className="relative h-48 w-full overflow-hidden">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-6 space-y-3">
                   <h3 className="font-heading text-2xl font-bold">{item.title}</h3>
                   <p className="text-foreground/70 leading-relaxed">{item.desc}</p>
                 </CardContent>
@@ -486,7 +587,7 @@ export default function Home() {
 
       {/* Pricing Packages */}
       <section className="py-24 md:py-32" id="pricing">
-        <div className="container">
+        <div className="container px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
               Choose Your Package
@@ -538,7 +639,7 @@ export default function Home() {
               <Card key={i} className={`p-10 hover-elevate transition-all ${pkg.featured ? 'border-primary border-2 shadow-2xl shadow-primary/20 scale-105' : 'border-primary/10 shadow-lg shadow-primary/5'} bg-gradient-to-br from-background to-accent/5`}>
                 <CardContent className="p-0 space-y-8">
                   {pkg.featured && (
-                    <div className="inline-block bg-gradient-to-r from-primary to-[#d946ef] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                    <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
                       ⭐ Most Popular
                     </div>
                   )}
@@ -546,7 +647,7 @@ export default function Home() {
                     <h3 className="font-heading text-3xl font-bold mb-3">{pkg.name}</h3>
                     <p className="text-foreground/60 font-medium">{pkg.classes}</p>
                   </div>
-                  <div className="font-heading text-5xl font-bold bg-gradient-to-r from-primary to-[#d946ef] bg-clip-text text-transparent">
+                  <div className="font-heading text-5xl font-bold text-primary">
                     {pkg.price}
                   </div>
                   <ul className="space-y-4">
@@ -573,8 +674,8 @@ export default function Home() {
       </section>
 
       {/* Meet Trainers */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-[#c026d3]/5" id="trainers">
-        <div className="container">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-accent/10" id="trainers">
+        <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Meet Your Trainers
@@ -620,8 +721,8 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-[#c026d3] text-primary-foreground">
-        <div className="container text-center">
+      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+        <div className="container px-4 md:px-6 text-center">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Your Best Self Is Waiting — Start Today
           </h2>
@@ -644,15 +745,15 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-card border-t py-12">
-        <div className="container">
+        <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-3 gap-12">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
                   <Dumbbell className="h-6 w-6 text-primary-foreground" />
                 </div>
-                <span className="font-heading text-xl font-bold bg-gradient-to-r from-primary to-[#c026d3] bg-clip-text text-transparent">
-                  Bliss & Burn
+                <span className="font-heading text-xl font-bold text-primary">
+                  Hoc Fitness
                 </span>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -697,16 +798,35 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-            <p>Copyright © 2025 Bliss & Burn. All Rights Reserved</p>
+            <p>Copyright © 2025 Hoc Fitness. All Rights Reserved</p>
           </div>
         </div>
       </footer>
 
-      {/* Floating WhatsApp Button */}
+      {/* Floating Action Buttons - Mobile */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 lg:hidden">
+        <button
+          onClick={() => setCallDialogOpen(true)}
+          className="h-14 w-14 rounded-full bg-primary text-white shadow-lg hover:scale-110 transition-transform flex items-center justify-center"
+          aria-label="Call Us"
+        >
+          <Phone className="h-6 w-6" />
+        </button>
+        <button
+          onClick={openWhatsApp}
+          className="h-14 w-14 rounded-full bg-[#25D366] text-white shadow-lg hover:scale-110 transition-transform flex items-center justify-center animate-pulse"
+          data-testid="button-whatsapp-float"
+          aria-label="Contact on WhatsApp"
+        >
+          <SiWhatsapp className="h-7 w-7" />
+        </button>
+      </div>
+      
+      {/* Floating WhatsApp Button - Desktop */}
       <button
         onClick={openWhatsApp}
-        className="fixed bottom-8 right-8 z-50 h-14 w-14 rounded-full bg-[#25D366] text-white shadow-lg hover:scale-110 transition-transform flex items-center justify-center animate-pulse"
-        data-testid="button-whatsapp-float"
+        className="hidden lg:flex fixed bottom-8 right-8 z-50 h-14 w-14 rounded-full bg-[#25D366] text-white shadow-lg hover:scale-110 transition-transform items-center justify-center animate-pulse"
+        data-testid="button-whatsapp-float-desktop"
         aria-label="Contact on WhatsApp"
       >
         <SiWhatsapp className="h-7 w-7" />
