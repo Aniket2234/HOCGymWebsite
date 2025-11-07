@@ -262,14 +262,14 @@ export default function Home() {
             playsInline
             preload="auto"
             src="/videos/hero.mp4"
-            className="absolute inset-0 w-full h-full object-cover object-[center_20%] md:object-center"
+            className="absolute inset-0 w-full h-full object-cover object-[30%_20%] md:object-center"
           />
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-transparent"></div>
         </div>
         
         {/* Content */}
-        <div className="container relative z-10 px-4 md:px-6 py-8 md:py-12">
+        <div className="container relative z-10 px-4 md:px-6 py-8 md:py-12 mt-20 md:mt-0">
           <div className="max-w-3xl lg:max-w-2xl">
             <div className="space-y-5 md:space-y-6">
               <h1 className="font-heading font-bold leading-[1.15] tracking-tight text-white text-center lg:text-left" style={{ fontSize: 'clamp(2rem, 7vw, 3.5rem)' }}>
@@ -285,16 +285,16 @@ export default function Home() {
                 <Button 
                   onClick={openWhatsApp} 
                   size="lg"
-                  className="w-full sm:w-auto rounded-full px-8 py-6 transition-all hover:scale-105 bg-primary hover:bg-primary/90 font-semibold text-base"
+                  className="w-full sm:w-auto rounded-full px-6 py-4 md:px-8 md:py-6 transition-all hover:scale-105 bg-primary hover:bg-primary/90 font-semibold text-sm md:text-base"
                   data-testid="button-book-consultation-hero"
                 >
-                  <MessageCircle className="h-5 w-5 mr-2" />
+                  <MessageCircle className="h-4 w-4 md:h-5 md:w-5 mr-2" />
                   Start Your Journey
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="w-full sm:w-auto rounded-full px-8 py-6 border-2 border-white bg-white/95 hover:bg-white hover:border-white transition-all hover:scale-105 font-semibold text-base text-foreground"
+                  className="w-full sm:w-auto rounded-full px-6 py-4 md:px-8 md:py-6 border-2 border-white bg-white/95 hover:bg-white hover:border-white transition-all hover:scale-105 font-semibold text-sm md:text-base text-foreground"
                   onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
                   data-testid="button-view-packages"
                 >
