@@ -286,10 +286,10 @@ export default function Home() {
                 <Button 
                   onClick={openWhatsApp} 
                   size="default"
-                  className="rounded-full px-6 py-3 md:px-8 md:py-6 transition-all hover:scale-105 bg-primary hover:bg-primary/90 font-semibold text-sm md:text-base"
+                  className="rounded-full px-6 py-3 md:px-8 md:py-6 transition-all hover:scale-105 bg-primary hover:bg-primary/90 font-semibold text-sm md:text-base text-black"
                   data-testid="button-book-consultation-hero"
                 >
-                  <MessageCircle className="h-4 w-4 md:h-5 md:w-5 mr-2" />
+                  <MessageCircle className="h-4 w-4 md:h-5 md:w-5 mr-2 text-black" />
                   Start Your Journey
                 </Button>
                 <Button 
