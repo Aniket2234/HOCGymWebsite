@@ -342,11 +342,11 @@ export default function Home() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden" id="contact">
+      <section className="py-6 md:py-8 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden" id="contact">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.08),transparent_70%)]" />
         <div className="container px-4 md:px-6 relative">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8">
               <div className="inline-block mb-4">
                 <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-primary/30">
                   Get Started Today
@@ -451,9 +451,9 @@ export default function Home() {
       </section>
 
       {/* Transformation Gallery */}
-      <section className="py-10 md:py-12 bg-gradient-to-b from-background via-primary/5 to-background" id="transformations">
+      <section className="py-6 md:py-8 bg-gradient-to-b from-background via-primary/5 to-background" id="transformations">
         <div className="container px-4 md:px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <div className="inline-block mb-4">
               <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
                 Real Results
@@ -496,10 +496,10 @@ export default function Home() {
       </section>
 
       {/* Program Details */}
-      <section className="py-10 md:py-12 bg-gradient-to-br from-primary/5 to-accent/10 relative overflow-hidden" id="program">
+      <section className="py-6 md:py-8 bg-gradient-to-br from-primary/5 to-accent/10 relative overflow-hidden" id="program">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.08),transparent_60%)]" />
         <div className="container px-4 md:px-6 relative">
-          <div className="max-w-4xl mx-auto text-center mb-12">
+          <div className="max-w-4xl mx-auto text-center mb-8">
             <div className="inline-block mb-6">
               <span className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-bold tracking-wide shadow-lg shadow-primary/30">
                 Exclusively For Women
@@ -546,10 +546,10 @@ export default function Home() {
       </section>
 
       {/* Training Types */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden">
+      <section className="py-6 md:py-8 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(59,130,246,0.05),transparent_50%)]" />
         <div className="container px-4 md:px-6 relative">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <div className="inline-block mb-4">
               <span className="bg-gradient-to-r from-primary/20 to-accent/30 text-primary px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">
                 Diverse Workouts
@@ -589,10 +589,10 @@ export default function Home() {
       </section>
 
       {/* Pricing Packages */}
-      <section className="py-12 md:py-16 relative overflow-hidden" id="pricing">
+      <section className="py-6 md:py-8 relative overflow-hidden" id="pricing">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
         <div className="container px-4 md:px-6 relative">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <div className="inline-block mb-4">
               <span className="bg-gradient-to-r from-primary/20 to-accent/30 text-primary px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">
                 💰 Flexible Pricing
@@ -686,9 +686,9 @@ export default function Home() {
       </section>
 
       {/* Meet Trainers */}
-      <section className="py-10 md:py-12 bg-gradient-to-br from-primary/5 to-accent/10" id="trainers">
+      <section className="py-6 md:py-8 bg-gradient-to-br from-primary/5 to-accent/10" id="trainers">
         <div className="container px-4 md:px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Meet Your Trainers
             </h2>
@@ -733,7 +733,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-10 md:py-12 bg-primary text-primary-foreground">
+      <section className="py-6 md:py-8 bg-primary text-primary-foreground">
         <div className="container px-4 md:px-6 text-center">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Your Best Self Is Waiting — Start Today
@@ -756,7 +756,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-card border-t py-12">
+      <footer className="bg-card border-t py-8">
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-3 gap-12">
             <div className="space-y-4">
