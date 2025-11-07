@@ -261,7 +261,7 @@ export default function Home() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src={workoutVideo} type="video/mp4" />
+            <source src="https://videos.pexels.com/video-files/6980760/6980760-uhd_2732_1440_30fps.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50" />
         </div>
@@ -570,12 +570,12 @@ export default function Home() {
               { image: zumbaImage, title: "Zumba / Aerobics", desc: "Fun cardio dance workouts that keep you active, energized, and engaged.", icon: Zap },
             ].map((item, i) => (
               <Card key={i} className="group overflow-hidden hover-elevate border-slate-200 shadow-md hover:shadow-xl transition-all duration-500 bg-white hover:border-slate-300">
-                <div className="relative h-32 md:h-40 w-full overflow-hidden">
+                <div className="relative h-48 md:h-56 w-full overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10" />
                   <img 
                     src={item.image} 
                     alt={item.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <CardContent className="p-3 md:p-4 space-y-1.5">
@@ -726,7 +726,7 @@ export default function Home() {
                   <div className="relative w-28 h-28 md:w-32 md:h-32 mx-auto">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-full blur-lg group-hover:blur-xl transition-all duration-500" />
                     <div className="relative w-full h-full rounded-full overflow-hidden border-3 border-primary/20 group-hover:border-primary/40 transition-all duration-500 shadow-lg">
-                      <img src={trainer.image} alt={trainer.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                      <img src={trainer.image} alt={trainer.name} className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
                     </div>
                   </div>
                   <div>
