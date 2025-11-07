@@ -45,8 +45,8 @@ import heroImage from "@assets/stock_images/indian_woman_fitness_ac12c042.jpg";
 import transformationImage from "@assets/generated_images/Transformation_before_after_results_1ed81a38.png";
 import onlineClassImage from "@assets/generated_images/Online_fitness_class_women_c03f2b22.png";
 import trainer1Image from "@assets/stock_images/indian_female_fitnes_26f1d39f.jpg";
-import trainer2Image from "@assets/stock_images/indian_female_fitnes_83e3ff3b.jpg";
-import trainer3Image from "@assets/stock_images/indian_female_fitnes_e7ae81cb.jpg";
+import trainer2Image from "@assets/generated_images/Zumba_instructor_dancing_portrait_1640c3fe.png";
+import trainer3Image from "@assets/generated_images/Strength_trainer_portrait_with_dumbbells_a7c3e639.png";
 import cardioImage from "@assets/generated_images/Woman_doing_cardio_workout_1ba27fe8.png";
 import functionalImage from "@assets/generated_images/Functional_training_exercise_e1989ece.png";
 import strengthImage from "@assets/generated_images/Strength_training_with_weights_f007c33a.png";
@@ -105,7 +105,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20 lg:pb-0">
       {/* Navigation Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-20 items-center justify-between px-4 md:px-6">
@@ -251,35 +251,36 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-5rem)] flex items-center lg:overflow-hidden bg-gradient-to-br from-primary/10 via-background to-accent/30">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(37,99,235,0.08),transparent_50%)]" />
-        <div className="container py-4 lg:py-12 relative px-4 md:px-6">
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-12 items-center max-w-7xl mx-auto">
-            <div className="space-y-2 sm:space-y-3 lg:space-y-8 text-center lg:text-left">
-              <h1 className="font-heading text-[28px] sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight lg:leading-[1.1] tracking-tight">
+      <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden bg-gradient-to-br from-primary/20 via-background to-accent/40">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(37,99,235,0.12),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,transparent,rgba(59,130,246,0.05),transparent)]" />
+        <div className="container py-6 md:py-10 lg:py-16 relative px-4 md:px-6">
+          <div className="grid lg:grid-cols-[1.1fr,0.9fr] gap-6 lg:gap-10 items-center max-w-6xl mx-auto">
+            <div className="space-y-4 md:space-y-5 lg:space-y-6 text-center lg:text-left">
+              <h1 className="font-heading font-bold leading-[1.15] tracking-tight" style={{ fontSize: 'clamp(1.75rem, 6vw, 3.5rem)' }}>
                 Transform Your
-                <span className="block text-primary mt-1">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-accent mt-1">
                   Body & Mind
                 </span>
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground/70 max-w-xl leading-relaxed mx-auto lg:mx-0">
+              <p className="text-foreground/80 leading-relaxed mx-auto lg:mx-0 max-w-lg" style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.125rem)' }}>
                 Expert-led online fitness programs designed exclusively for women. Train anytime, anywhere.
               </p>
-              <div className="flex flex-wrap gap-3 lg:gap-5 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
                 <Button 
                   onClick={openWhatsApp} 
-                  size="default"
-                  className="rounded-full text-sm lg:text-base px-6 py-3 lg:px-10 lg:py-7 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all"
+                  size="lg"
+                  className="rounded-full px-6 py-5 md:px-8 md:py-6 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all hover:scale-105 bg-gradient-to-r from-primary to-primary/90 font-semibold text-sm md:text-base"
                   data-testid="button-book-consultation-hero"
                 >
-                  <MessageCircle className="h-4 w-4 mr-2" />
+                  <MessageCircle className="h-4 w-4 md:h-5 md:w-5 mr-2" />
                   Start Your Journey
                 </Button>
                 <Button 
                   variant="outline" 
-                  size="default"
-                  className="rounded-full text-sm lg:text-base px-6 py-3 lg:px-10 lg:py-7 border-2 hover:bg-primary/5"
+                  size="lg"
+                  className="rounded-full px-6 py-5 md:px-8 md:py-6 border-2 border-primary/50 hover:bg-primary/10 hover:border-primary transition-all hover:scale-105 font-semibold text-sm md:text-base"
                   onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
                   data-testid="button-view-packages"
                 >
@@ -290,29 +291,29 @@ export default function Home() {
                 href={GOOGLE_REVIEWS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-wrap items-center gap-1.5 sm:gap-2 md:gap-4 lg:gap-8 justify-center lg:justify-start bg-gradient-to-r from-primary/5 to-accent/5 hover:from-primary/10 hover:to-accent/10 px-3 py-1 sm:px-4 sm:py-2 lg:px-6 lg:py-4 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 cursor-pointer group border border-primary/10 hover:border-primary/30"
+                className="inline-flex flex-wrap items-center gap-2 md:gap-3 lg:gap-5 justify-center lg:justify-start bg-gradient-to-r from-primary/10 to-accent/10 hover:from-primary/20 hover:to-accent/20 px-4 py-2 md:px-5 md:py-2.5 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 cursor-pointer group border border-primary/20 hover:border-primary/30"
               >
                 <div className="flex items-center gap-1.5">
                   <div className="flex group-hover:scale-110 transition-transform duration-300">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="max-[360px]:h-3 max-[360px]:w-3 h-4 w-4 lg:h-5 lg:w-5 fill-primary text-primary" />
+                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
                     ))}
                   </div>
-                  <span className="max-[360px]:text-xs text-sm lg:text-base font-semibold">4.8/5.0</span>
+                  <span className="text-sm font-bold">4.8/5.0</span>
                 </div>
-                <div className="h-4 w-px bg-border hidden md:block" />
-                <div className="max-[360px]:text-xs text-sm lg:text-base font-semibold">
-                  <span className="text-primary font-bold">1000+</span> Success
+                <div className="h-4 w-px bg-primary/30 hidden sm:block" />
+                <div className="text-sm font-bold">
+                  <span className="text-primary font-bold">1000+</span> Success Stories
                 </div>
-                <div className="max-[360px]:hidden text-xs text-muted-foreground group-hover:text-primary transition-colors flex items-center gap-1">
-                  <span className="hidden sm:inline">View Reviews</span>
+                <div className="hidden sm:flex text-xs text-muted-foreground group-hover:text-primary transition-colors items-center gap-1">
+                  <span>View Reviews</span>
                   <TrendingUp className="h-3 w-3" />
                 </div>
               </a>
             </div>
-            <div className="relative max-[360px]:hidden h-44 sm:h-60 lg:h-[500px] w-full">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-3xl" />
-              <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl shadow-primary/20">
+            <div className="relative h-64 sm:h-72 md:h-80 lg:h-[420px] w-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl blur-2xl opacity-60" />
+              <div className="relative h-full rounded-3xl overflow-hidden shadow-xl shadow-primary/20 border-2 border-primary/20 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/30 hover:scale-[1.02]">
                 <img 
                   src={heroImage} 
                   alt="Woman doing fitness workout" 
@@ -339,24 +340,24 @@ export default function Home() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-6 md:py-8 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden" id="contact">
+      <section className="py-10 md:py-12 lg:py-16 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden" id="contact">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.08),transparent_70%)]" />
         <div className="container px-4 md:px-6 relative">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <div className="inline-block mb-4">
-                <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-primary/30">
+            <div className="text-center mb-6 md:mb-8">
+              <div className="inline-block mb-3 md:mb-4">
+                <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-xs md:text-sm font-bold shadow-lg shadow-primary/30">
                   Get Started Today
                 </span>
               </div>
-              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+              <h2 className="font-heading font-bold mb-3 md:mb-6 tracking-tight" style={{ fontSize: 'clamp(1.75rem, 5vw, 3.75rem)' }}>
                 Start Your Transformation
               </h2>
-              <p className="text-xl text-foreground/60 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-foreground/60 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(0.95rem, 2vw, 1.25rem)' }}>
                 Fill out the form and we'll contact you within 24 hours to discuss your fitness goals
               </p>
             </div>
-            <Card className="p-10 md:p-14 shadow-2xl shadow-primary/10 border-2 border-primary/20 backdrop-blur hover:shadow-3xl hover:shadow-primary/20 transition-all duration-500">
+            <Card className="p-5 md:p-10 lg:p-14 shadow-xl shadow-primary/10 border-2 border-primary/20 backdrop-blur hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -543,21 +544,21 @@ export default function Home() {
       </section>
 
       {/* Training Types */}
-      <section className="py-6 md:py-8 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden">
+      <section className="py-8 md:py-10 lg:py-12 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(59,130,246,0.05),transparent_50%)]" />
-        <div className="container px-4 md:px-6 relative">
-          <div className="text-center mb-8">
-            <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-primary/20 to-accent/30 text-primary px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">
+        <div className="container px-4 md:px-6 relative max-w-6xl mx-auto">
+          <div className="text-center mb-6 md:mb-8">
+            <div className="inline-block mb-3 md:mb-4">
+              <span className="bg-gradient-to-r from-primary/20 to-accent/30 text-primary px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-primary/20">
                 Diverse Workouts
               </span>
             </div>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+            <h2 className="font-heading font-bold mb-3 md:mb-4 tracking-tight" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
               Our Training Programs
             </h2>
-            <p className="text-xl text-foreground/60 max-w-2xl mx-auto">Comprehensive programs for every fitness level and goal</p>
+            <p className="text-foreground/60 max-w-2xl mx-auto" style={{ fontSize: 'clamp(0.95rem, 2vw, 1.125rem)' }}>Comprehensive programs for every fitness level and goal</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
               { image: cardioImage, title: "Cardio Core", desc: "High-energy workouts that elevate your heart rate, boost endurance, and burn calories effectively.", icon: Flame },
               { image: functionalImage, title: "Functional Training", desc: "Improve daily performance, reduce injury risk, and enhance flexibility with practical movements.", icon: Target },
@@ -566,8 +567,8 @@ export default function Home() {
               { image: yogaImage, title: "Yoga Training", desc: "Holistic practice combining postures, breathwork, and meditation for mind-body harmony.", icon: Heart },
               { image: zumbaImage, title: "Zumba / Aerobics", desc: "Fun cardio dance workouts that keep you active, energized, and engaged.", icon: Zap },
             ].map((item, i) => (
-              <Card key={i} className="group overflow-hidden hover-elevate border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white hover:border-slate-300">
-                <div className="relative h-56 w-full overflow-hidden">
+              <Card key={i} className="group overflow-hidden hover-elevate border-slate-200 shadow-md hover:shadow-xl transition-all duration-500 bg-white hover:border-slate-300">
+                <div className="relative h-40 md:h-48 w-full overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10" />
                   <img 
                     src={item.image} 
@@ -575,9 +576,9 @@ export default function Home() {
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
-                <CardContent className="p-6 space-y-3">
-                  <h3 className="font-heading text-2xl font-bold text-slate-800 group-hover:text-slate-600 transition-colors">{item.title}</h3>
-                  <p className="text-slate-600 leading-relaxed text-sm">{item.desc}</p>
+                <CardContent className="p-4 md:p-5 space-y-2">
+                  <h3 className="font-heading text-lg md:text-xl font-bold text-slate-800 group-hover:text-slate-600 transition-colors">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed text-xs md:text-sm">{item.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -683,15 +684,21 @@ export default function Home() {
       </section>
 
       {/* Meet Trainers */}
-      <section className="py-6 md:py-8 bg-gradient-to-br from-primary/5 to-accent/10" id="trainers">
-        <div className="container px-4 md:px-6">
-          <div className="text-center mb-8">
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/5 relative overflow-hidden" id="trainers">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]" />
+        <div className="container px-4 md:px-6 relative">
+          <div className="text-center mb-12">
+            <div className="inline-block mb-4">
+              <span className="bg-gradient-to-r from-primary to-accent text-primary-foreground px-6 py-2 rounded-full text-sm font-bold shadow-lg shadow-primary/30">
+                Expert Team
+              </span>
+            </div>
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">
               Meet Your Trainers
             </h2>
-            <p className="text-lg text-muted-foreground">Professionals who can give you the best training</p>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Certified professionals dedicated to transforming your fitness journey</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
                 name: "Snata Pattnaik",
@@ -712,16 +719,19 @@ export default function Home() {
                 bio: "Passionate about health and helping people achieve their fitness goals through strength training and weight loss programs."
               },
             ].map((trainer, i) => (
-              <Card key={i} className="p-6 hover-elevate">
-                <CardContent className="p-0 space-y-4 text-center">
-                  <div className="w-32 h-32 mx-auto rounded-full overflow-hidden">
-                    <img src={trainer.image} alt={trainer.name} className="w-full h-full object-cover" />
+              <Card key={i} className="group p-8 hover-elevate bg-card/50 backdrop-blur border-2 border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20">
+                <CardContent className="p-0 space-y-6 text-center">
+                  <div className="relative w-40 h-40 mx-auto">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
+                    <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary/40 transition-all duration-500 shadow-xl">
+                      <img src={trainer.image} alt={trainer.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    </div>
                   </div>
                   <div>
-                    <h3 className="font-heading text-xl font-bold">{trainer.name}</h3>
-                    <p className="text-sm text-primary font-medium">{trainer.role}</p>
+                    <h3 className="font-heading text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{trainer.name}</h3>
+                    <p className="text-base text-primary font-bold bg-primary/10 px-4 py-2 rounded-full inline-block">{trainer.role}</p>
                   </div>
-                  <p className="text-sm text-muted-foreground">{trainer.bio}</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">{trainer.bio}</p>
                 </CardContent>
               </Card>
             ))}
@@ -812,8 +822,32 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Floating Contact Menu - Professional Drop-up */}
-      <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-3">
+      {/* Sticky Bottom CTA for Mobile */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-primary via-primary to-primary/90 border-t-2 border-primary/20 shadow-2xl backdrop-blur-sm">
+        <div className="container px-4 py-3">
+          <div className="flex items-center gap-2">
+            <Button 
+              onClick={openWhatsApp}
+              className="flex-1 bg-white hover:bg-slate-50 text-primary rounded-full py-6 font-bold shadow-lg"
+              data-testid="button-sticky-whatsapp"
+            >
+              <SiWhatsapp className="h-5 w-5 mr-2" />
+              WhatsApp Us
+            </Button>
+            <Button 
+              onClick={() => setCallDialogOpen(true)}
+              variant="outline"
+              className="px-6 py-6 bg-primary-foreground/10 hover:bg-primary-foreground/20 border-white/30 text-white rounded-full"
+              data-testid="button-sticky-call"
+            >
+              <Phone className="h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Floating Contact Menu - Desktop Only */}
+      <div className="hidden lg:flex fixed bottom-8 right-8 z-50 flex-col items-end gap-3">
         {/* Drop-up Menu Items */}
         <div className={`flex flex-col gap-3 transition-all duration-300 ${contactMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
           <button

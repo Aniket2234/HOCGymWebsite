@@ -90,6 +90,11 @@
   --shadow-2xl: 0px 2px 0px 0px hsl(240 6% 10% / 0.00);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
+  
+  --section-gap-mobile: 2.5rem;
+  --section-gap-desktop: 4rem;
+  --card-padding-mobile: 1.25rem;
+  --card-padding-desktop: 2rem;
 
   /* Automatically computed borders - intensity can be controlled by the user by the --opaque-button-border-intensity setting */
 
