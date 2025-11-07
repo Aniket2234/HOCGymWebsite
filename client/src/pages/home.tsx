@@ -800,8 +800,8 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Sticky Bottom CTA for Mobile */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-primary via-primary to-primary/90 border-t-2 border-primary/20 shadow-2xl backdrop-blur-sm">
+      {/* Sticky Bottom WhatsApp Banner - All Screens */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-primary via-primary to-primary/90 border-t-2 border-primary/20 shadow-2xl backdrop-blur-sm">
         <div className="container px-4 py-3">
           <div className="flex items-center gap-2">
             <Button 
@@ -822,45 +822,6 @@ export default function Home() {
             </Button>
           </div>
         </div>
-      </div>
-
-      {/* Floating Contact Menu - Desktop Only */}
-      <div className="hidden lg:flex fixed bottom-8 right-8 z-50 flex-col items-end gap-3">
-        {/* Drop-up Menu Items */}
-        <div className={`flex flex-col gap-3 transition-all duration-300 ${contactMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-          <button
-            onClick={() => {
-              setCallDialogOpen(true);
-              setContactMenuOpen(false);
-            }}
-            className="group flex items-center gap-3 bg-white hover:bg-slate-50 text-slate-700 px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200"
-            aria-label="Call Us"
-          >
-            <Phone className="h-5 w-5 text-slate-600" />
-            <span className="text-sm font-medium">Call Us</span>
-          </button>
-          <button
-            onClick={() => {
-              openWhatsApp();
-              setContactMenuOpen(false);
-            }}
-            className="group flex items-center gap-3 bg-white hover:bg-green-50 text-slate-700 px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200"
-            data-testid="button-whatsapp-float"
-            aria-label="Contact on WhatsApp"
-          >
-            <SiWhatsapp className="h-5 w-5 text-[#25D366]" />
-            <span className="text-sm font-medium">WhatsApp</span>
-          </button>
-        </div>
-        
-        {/* Main Contact Button */}
-        <button
-          onClick={() => setContactMenuOpen(!contactMenuOpen)}
-          className="group relative h-14 w-14 rounded-full bg-slate-800 hover:bg-slate-700 text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
-          aria-label="Contact Menu"
-        >
-          <MessageCircle className={`h-6 w-6 transition-transform duration-300 ${contactMenuOpen ? 'rotate-45' : ''}`} />
-        </button>
       </div>
     </div>
   );
