@@ -54,6 +54,7 @@ import zumbaImage from "@assets/generated_images/Zumba_dance_fitness_class_875f4
 
 const WHATSAPP_NUMBER = "918600126395";
 const PHONE_NUMBER = "+91 8600126395";
+const GOOGLE_REVIEWS_URL = "https://share.google/BOqrkzB7sb4X33Iy0";
 
 export default function Home() {
   const { toast } = useToast();
@@ -286,9 +287,14 @@ export default function Home() {
                   View Packages
                 </Button>
               </div>
-              <div className="flex flex-wrap items-center gap-4 md:gap-8 pt-6 justify-center lg:justify-start">
+              <a 
+                href={GOOGLE_REVIEWS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-wrap items-center gap-4 md:gap-8 pt-6 justify-center lg:justify-start bg-gradient-to-r from-primary/5 to-accent/5 hover:from-primary/10 hover:to-accent/10 px-6 py-4 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 cursor-pointer group border border-primary/10 hover:border-primary/30"
+              >
                 <div className="flex items-center gap-3">
-                  <div className="flex">
+                  <div className="flex group-hover:scale-110 transition-transform duration-300">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 fill-primary text-primary" />
                     ))}
@@ -299,7 +305,11 @@ export default function Home() {
                 <div className="text-base font-semibold">
                   <span className="text-primary font-bold">1000+</span> Success Stories
                 </div>
-              </div>
+                <div className="ml-2 text-xs text-muted-foreground group-hover:text-primary transition-colors flex items-center gap-1">
+                  <span>View Reviews</span>
+                  <TrendingUp className="h-3 w-3" />
+                </div>
+              </a>
             </div>
             <div className="relative lg:h-[600px]">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-3xl" />
@@ -316,27 +326,38 @@ export default function Home() {
       </section>
 
       {/* Notice Banner */}
-      <section className="bg-destructive/10 border-y border-destructive/20 py-4">
+      <section className="bg-gradient-to-r from-destructive/10 via-destructive/15 to-destructive/10 border-y border-destructive/30 py-5 shadow-inner">
         <div className="container px-4 md:px-6">
-          <p className="text-center text-sm md:text-base text-destructive font-medium">
-            <strong>Note:</strong> We only offer online classes. No offline batches available.
-          </p>
+          <div className="flex items-center justify-center gap-3 max-w-4xl mx-auto">
+            <div className="h-8 w-8 rounded-full bg-destructive/20 flex items-center justify-center flex-shrink-0">
+              <Info className="h-4 w-4 text-destructive" />
+            </div>
+            <p className="text-center text-sm md:text-base text-destructive font-semibold">
+              <strong>Important:</strong> We only offer online classes. No offline batches available.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-24 md:py-32 bg-gradient-to-br from-primary/5 via-background to-accent/20" id="contact">
-        <div className="container px-4 md:px-6">
+      <section className="py-24 md:py-32 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden" id="contact">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.08),transparent_70%)]" />
+        <div className="container px-4 md:px-6 relative">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
+              <div className="inline-block mb-4">
+                <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-primary/30">
+                  Get Started Today
+                </span>
+              </div>
               <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
                 Start Your Transformation
               </h2>
-              <p className="text-xl text-foreground/60 max-w-2xl mx-auto">
+              <p className="text-xl text-foreground/60 max-w-2xl mx-auto leading-relaxed">
                 Fill out the form and we'll contact you within 24 hours to discuss your fitness goals
               </p>
             </div>
-            <Card className="p-10 md:p-14 shadow-xl shadow-primary/5 border-primary/10 backdrop-blur">
+            <Card className="p-10 md:p-14 shadow-2xl shadow-primary/10 border-2 border-primary/20 backdrop-blur hover:shadow-3xl hover:shadow-primary/20 transition-all duration-500">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -428,63 +449,94 @@ export default function Home() {
       </section>
 
       {/* Transformation Gallery */}
-      <section className="py-16 md:py-24" id="transformations">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-background via-primary/5 to-background" id="transformations">
         <div className="container px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4">
+              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                Real Results
+              </span>
+            </div>
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               <span className="text-primary">
                 Shape Your Body
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground">Real transformations from real women</p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Real transformations from real women who took the first step towards a healthier lifestyle</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="relative rounded-2xl overflow-hidden">
+            <div className="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img 
                 src={transformationImage} 
                 alt="Before and after transformation" 
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                <p className="text-white font-semibold text-lg">Amazing Transformation</p>
+                <p className="text-white/80 text-sm">Dedication brings results</p>
+              </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden">
+            <div className="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img 
                 src={onlineClassImage} 
                 alt="Online fitness class" 
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                <p className="text-white font-semibold text-lg">Live Interactive Classes</p>
+                <p className="text-white/80 text-sm">Join from anywhere</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Program Details */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-accent/10" id="program">
-        <div className="container px-4 md:px-6">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-accent/10 relative overflow-hidden" id="program">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.08),transparent_60%)]" />
+        <div className="container px-4 md:px-6 relative">
           <div className="max-w-4xl mx-auto text-center mb-12">
+            <div className="inline-block mb-6">
+              <span className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-bold tracking-wide shadow-lg shadow-primary/30">
+                Exclusively For Women
+              </span>
+            </div>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Only Designed For Ladies
             </h2>
             <h3 className="font-heading text-2xl md:text-3xl font-semibold text-primary mb-6">
               Start your weight loss journey with HOC FITNESS
             </h3>
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               We conduct Online LIVE Fitness Classes Daily: ZUMBA, Yoga, Aerobics, Weight Loss Program, HIIT, Cardio, TONE UP & More.
             </p>
-            <div className="bg-card p-8 rounded-2xl border">
-              <h4 className="font-heading text-xl font-semibold mb-4">Time Slots</h4>
-              <div className="space-y-3 text-left max-w-2xl mx-auto">
-                <p className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="font-medium">Morning Sessions:</span> 5:45AM - 7AM - 8AM - 11AM
-                </p>
-                <p className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="font-medium">Evening Sessions:</span> 6PM - 7:30PM
-                </p>
-                <p className="flex items-center gap-2 text-primary font-semibold">
-                  <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
-                  You can join Any-class, Any-Time, Any-Day
-                </p>
+            <div className="bg-card p-8 md:p-10 rounded-3xl border-2 border-primary/20 shadow-xl shadow-primary/10 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 backdrop-blur">
+              <div className="mb-6">
+                <Activity className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h4 className="font-heading text-2xl font-bold mb-2">Flexible Time Slots</h4>
+                <p className="text-sm text-muted-foreground">Choose what works best for your schedule</p>
+              </div>
+              <div className="space-y-4 text-left max-w-2xl mx-auto">
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors">
+                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold text-foreground">Morning Sessions:</span>
+                    <span className="text-muted-foreground ml-2">5:45AM - 7AM - 8AM - 11AM</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors">
+                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold text-foreground">Evening Sessions:</span>
+                    <span className="text-muted-foreground ml-2">6PM - 7:30PM</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30">
+                  <Zap className="h-6 w-6 text-primary flex-shrink-0 animate-pulse" />
+                  <span className="text-primary font-bold text-lg">You can join Any-class, Any-Time, Any-Day</span>
+                </div>
               </div>
             </div>
           </div>
@@ -550,34 +602,44 @@ export default function Home() {
       </section>
 
       {/* Training Types */}
-      <section className="py-24 md:py-32 bg-gradient-to-br from-primary/5 via-background to-accent/20">
-        <div className="container px-4 md:px-6">
+      <section className="py-24 md:py-32 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(59,130,246,0.05),transparent_50%)]" />
+        <div className="container px-4 md:px-6 relative">
           <div className="text-center mb-16">
+            <div className="inline-block mb-4">
+              <span className="bg-gradient-to-r from-primary/20 to-accent/30 text-primary px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">
+                Diverse Workouts
+              </span>
+            </div>
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
               Our Training Programs
             </h2>
-            <p className="text-xl text-foreground/60">Comprehensive programs for every fitness level</p>
+            <p className="text-xl text-foreground/60 max-w-2xl mx-auto">Comprehensive programs for every fitness level and goal</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { image: cardioImage, title: "Cardio Core", desc: "High-energy workouts that elevate your heart rate, boost endurance, and burn calories effectively." },
-              { image: functionalImage, title: "Functional Training", desc: "Improve daily performance, reduce injury risk, and enhance flexibility with practical movements." },
-              { image: strengthImage, title: "Strength Training", desc: "Build muscle, increase power, and develop total body strength with progressive resistance workouts." },
-              { image: mobilityImage, title: "Mobility Exercise", desc: "Enhance your range of motion and reduce stiffness with targeted mobility work." },
-              { image: yogaImage, title: "Yoga Training", desc: "Holistic practice combining postures, breathwork, and meditation for mind-body harmony." },
-              { image: zumbaImage, title: "Zumba / Aerobics", desc: "Fun cardio dance workouts that keep you active, energized, and engaged." },
+              { image: cardioImage, title: "Cardio Core", desc: "High-energy workouts that elevate your heart rate, boost endurance, and burn calories effectively.", icon: Flame },
+              { image: functionalImage, title: "Functional Training", desc: "Improve daily performance, reduce injury risk, and enhance flexibility with practical movements.", icon: Target },
+              { image: strengthImage, title: "Strength Training", desc: "Build muscle, increase power, and develop total body strength with progressive resistance workouts.", icon: Dumbbell },
+              { image: mobilityImage, title: "Mobility Exercise", desc: "Enhance your range of motion and reduce stiffness with targeted mobility work.", icon: Activity },
+              { image: yogaImage, title: "Yoga Training", desc: "Holistic practice combining postures, breathwork, and meditation for mind-body harmony.", icon: Heart },
+              { image: zumbaImage, title: "Zumba / Aerobics", desc: "Fun cardio dance workouts that keep you active, energized, and engaged.", icon: Zap },
             ].map((item, i) => (
-              <Card key={i} className="overflow-hidden hover-elevate border-primary/10 shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all bg-gradient-to-br from-background to-accent/5">
-                <div className="relative h-48 w-full overflow-hidden">
+              <Card key={i} className="group overflow-hidden hover-elevate border-primary/10 shadow-lg shadow-primary/5 hover:shadow-2xl hover:shadow-primary/15 transition-all duration-500 bg-gradient-to-br from-background to-accent/5 hover:border-primary/30">
+                <div className="relative h-56 w-full overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
                   <img 
                     src={item.image} 
                     alt={item.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
+                  <div className="absolute top-4 right-4 z-20 h-12 w-12 rounded-full bg-primary/90 backdrop-blur flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
+                    <item.icon className="h-6 w-6 text-white" />
+                  </div>
                 </div>
                 <CardContent className="p-6 space-y-3">
-                  <h3 className="font-heading text-2xl font-bold">{item.title}</h3>
-                  <p className="text-foreground/70 leading-relaxed">{item.desc}</p>
+                  <h3 className="font-heading text-2xl font-bold group-hover:text-primary transition-colors">{item.title}</h3>
+                  <p className="text-foreground/70 leading-relaxed text-sm">{item.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -586,13 +648,20 @@ export default function Home() {
       </section>
 
       {/* Pricing Packages */}
-      <section className="py-24 md:py-32" id="pricing">
-        <div className="container px-4 md:px-6">
+      <section className="py-24 md:py-32 relative overflow-hidden" id="pricing">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+        <div className="container px-4 md:px-6 relative">
           <div className="text-center mb-16">
+            <div className="inline-block mb-4">
+              <span className="bg-gradient-to-r from-primary/20 to-accent/30 text-primary px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">
+                <DollarSign className="inline h-3 w-3 mr-1" />
+                Flexible Pricing
+              </span>
+            </div>
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
               Choose Your Package
             </h2>
-            <p className="text-xl text-foreground/60">Flexible plans designed for your success</p>
+            <p className="text-xl text-foreground/60 max-w-2xl mx-auto">Flexible plans designed for your success and transformation journey</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
@@ -636,34 +705,37 @@ export default function Home() {
                 ]
               },
             ].map((pkg, i) => (
-              <Card key={i} className={`p-10 hover-elevate transition-all ${pkg.featured ? 'border-primary border-2 shadow-2xl shadow-primary/20 scale-105' : 'border-primary/10 shadow-lg shadow-primary/5'} bg-gradient-to-br from-background to-accent/5`}>
+              <Card key={i} className={`group p-10 hover-elevate transition-all duration-500 ${pkg.featured ? 'border-primary border-2 shadow-2xl shadow-primary/25 scale-105 hover:scale-110' : 'border-primary/10 shadow-lg shadow-primary/5 hover:shadow-2xl hover:shadow-primary/15'} bg-gradient-to-br from-background to-accent/5 hover:border-primary/30 relative overflow-hidden`}>
+                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent ${pkg.featured ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity duration-500`} />
                 <CardContent className="p-0 space-y-8">
                   {pkg.featured && (
-                    <div className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                      ⭐ Most Popular
+                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary/90 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-primary/30 animate-pulse">
+                      <Star className="h-4 w-4 fill-white" />
+                      Most Popular
                     </div>
                   )}
                   <div>
-                    <h3 className="font-heading text-3xl font-bold mb-3">{pkg.name}</h3>
-                    <p className="text-foreground/60 font-medium">{pkg.classes}</p>
+                    <h3 className="font-heading text-3xl font-bold mb-3 group-hover:text-primary transition-colors">{pkg.name}</h3>
+                    <p className="text-foreground/60 font-medium text-lg">{pkg.classes}</p>
                   </div>
-                  <div className="font-heading text-5xl font-bold text-primary">
+                  <div className="font-heading text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     {pkg.price}
                   </div>
                   <ul className="space-y-4">
                     {pkg.features.map((feature, j) => (
-                      <li key={j} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-base text-foreground/80">{feature}</span>
+                      <li key={j} className="flex items-start gap-3 group/item">
+                        <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform" />
+                        <span className="text-base text-foreground/80 leading-relaxed">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Button 
                     onClick={openWhatsApp} 
-                    className={`w-full rounded-full py-6 text-base font-semibold ${pkg.featured ? 'shadow-lg shadow-primary/25' : ''}`}
+                    className={`w-full rounded-full py-6 text-base font-semibold transition-all duration-300 ${pkg.featured ? 'shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40' : 'hover:bg-primary hover:text-primary-foreground'}`}
                     variant={pkg.featured ? "default" : "outline"}
                     data-testid={`button-select-${pkg.name.toLowerCase().replace(' ', '-')}`}
                   >
+                    <MessageCircle className="h-4 w-4 mr-2" />
                     Select Plan
                   </Button>
                 </CardContent>
