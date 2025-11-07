@@ -251,20 +251,26 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden bg-gradient-to-br from-primary/20 via-background to-accent/40">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(37,99,235,0.12),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,transparent,rgba(59,130,246,0.05),transparent)]" />
-        <div className="container py-6 md:py-10 lg:py-16 relative px-4 md:px-6">
-          <div className="grid lg:grid-cols-[1.1fr,0.9fr] gap-4 lg:gap-6 items-center max-w-5xl mx-auto">
-            <div className="space-y-4 md:space-y-5 lg:space-y-6 text-center lg:text-left">
-              <h1 className="font-heading font-bold leading-[1.15] tracking-tight" style={{ fontSize: 'clamp(1.75rem, 6vw, 3.5rem)' }}>
+      <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden">
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 animate-gradient">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+        
+        {/* Content */}
+        <div className="container py-6 md:py-10 lg:py-16 relative z-10 px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center lg:text-left">
+            <div className="space-y-4 md:space-y-5 lg:space-y-6">
+              <h1 className="font-heading font-bold leading-[1.15] tracking-tight text-white" style={{ fontSize: 'clamp(1.75rem, 6vw, 3.5rem)' }}>
                 Transform Your
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-accent mt-1">
                   Body & Mind
                 </span>
               </h1>
-              <p className="text-foreground/80 leading-relaxed mx-auto lg:mx-0 max-w-lg" style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.125rem)' }}>
+              <p className="text-white/90 leading-relaxed mx-auto lg:mx-0 max-w-lg" style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.125rem)' }}>
                 Expert-led online fitness programs designed exclusively for women. Train anytime, anywhere.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
@@ -280,7 +286,7 @@ export default function Home() {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="rounded-full px-6 py-5 md:px-8 md:py-6 border-2 border-primary/50 hover:bg-primary/10 hover:border-primary transition-all hover:scale-105 font-semibold text-sm md:text-base"
+                  className="rounded-full px-6 py-5 md:px-8 md:py-6 border-2 border-white/50 hover:bg-white/10 hover:border-white transition-all hover:scale-105 font-semibold text-sm md:text-base text-white"
                   onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
                   data-testid="button-view-packages"
                 >
@@ -291,7 +297,7 @@ export default function Home() {
                 href={GOOGLE_REVIEWS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-wrap items-center gap-2 md:gap-3 lg:gap-5 justify-center lg:justify-start bg-gradient-to-r from-primary/10 to-accent/10 hover:from-primary/20 hover:to-accent/20 px-4 py-2 md:px-5 md:py-2.5 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 cursor-pointer group border border-primary/20 hover:border-primary/30"
+                className="inline-flex flex-wrap items-center gap-2 md:gap-3 lg:gap-5 justify-center lg:justify-start bg-white/10 hover:bg-white/20 backdrop-blur-sm px-4 py-2 md:px-5 md:py-2.5 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 cursor-pointer group border border-white/20 hover:border-white/30"
               >
                 <div className="flex items-center gap-1.5">
                   <div className="flex group-hover:scale-110 transition-transform duration-300">
@@ -299,27 +305,17 @@ export default function Home() {
                       <Star key={i} className="h-4 w-4 fill-primary text-primary" />
                     ))}
                   </div>
-                  <span className="text-sm font-bold">4.8/5.0</span>
+                  <span className="text-sm font-bold text-white">4.8/5.0</span>
                 </div>
-                <div className="h-4 w-px bg-primary/30 hidden sm:block" />
-                <div className="text-sm font-bold">
+                <div className="h-4 w-px bg-white/30 hidden sm:block" />
+                <div className="text-sm font-bold text-white">
                   <span className="text-primary font-bold">1000+</span> Success Stories
                 </div>
-                <div className="hidden sm:flex text-xs text-muted-foreground group-hover:text-primary transition-colors items-center gap-1">
+                <div className="hidden sm:flex text-xs text-white/80 group-hover:text-white transition-colors items-center gap-1">
                   <span>View Reviews</span>
                   <TrendingUp className="h-3 w-3" />
                 </div>
               </a>
-            </div>
-            <div className="relative h-64 sm:h-72 md:h-80 lg:h-[420px] w-full">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl blur-2xl opacity-60" />
-              <div className="relative h-full rounded-3xl overflow-hidden shadow-xl shadow-primary/20 border-2 border-primary/20 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/30 hover:scale-[1.02]">
-                <img 
-                  src={heroImage} 
-                  alt="Woman doing fitness workout" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -800,8 +796,8 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Sticky Bottom WhatsApp Banner - All Screens */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-primary via-primary to-primary/90 border-t-2 border-primary/20 shadow-2xl backdrop-blur-sm">
+      {/* Sticky Bottom WhatsApp Banner - Mobile Only */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-primary via-primary to-primary/90 border-t-2 border-primary/20 shadow-2xl backdrop-blur-sm">
         <div className="container px-4 py-3">
           <div className="flex items-center gap-2">
             <Button 
@@ -822,6 +818,18 @@ export default function Home() {
             </Button>
           </div>
         </div>
+      </div>
+
+      {/* Floating Contact Icon - Desktop Only */}
+      <div className="hidden lg:block fixed bottom-8 right-8 z-50">
+        <button
+          onClick={openWhatsApp}
+          className="group relative h-16 w-16 rounded-full bg-slate-800 hover:bg-slate-700 text-white shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center"
+          aria-label="Contact on WhatsApp"
+          data-testid="button-floating-contact"
+        >
+          <MessageCircle className="h-7 w-7" />
+        </button>
       </div>
     </div>
   );
