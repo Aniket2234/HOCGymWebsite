@@ -353,7 +353,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-6 md:mb-8">
               <div className="inline-block mb-3 md:mb-4">
-                <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-xs md:text-sm font-bold shadow-lg shadow-primary/30">
+                <span className="bg-primary text-black px-5 py-2.5 rounded-full text-xs md:text-sm font-bold shadow-lg shadow-primary/30 border border-primary/20">
                   Get Started Today
                 </span>
               </div>
@@ -456,11 +456,11 @@ export default function Home() {
       </section>
 
       {/* Transformation Gallery */}
-      <section className="py-6 md:py-8 bg-gradient-to-b from-background via-primary/5 to-background" id="transformations">
+      <section className="py-6 md:py-8 pb-10 md:pb-14 bg-gradient-to-b from-background via-primary/5 to-background" id="transformations">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-8">
             <div className="inline-block mb-4">
-              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+              <span className="bg-primary text-black px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/30 border border-primary/20">
                 Real Results
               </span>
             </div>
@@ -471,7 +471,7 @@ export default function Home() {
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Real transformations from real women who took the first step towards a healthier lifestyle</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-5 max-w-3xl mx-auto">
             <div className="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img 
@@ -501,13 +501,13 @@ export default function Home() {
       </section>
 
       {/* Program Details */}
-      <section className="py-8 md:py-12 bg-gradient-to-br from-primary/5 to-accent/10 relative overflow-hidden" id="program">
+      <section className="pt-10 md:pt-14 py-8 md:py-12 bg-gradient-to-br from-primary/5 to-accent/10 relative overflow-hidden" id="program">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.08),transparent_60%)]" />
         <div className="container px-4 md:px-6 relative">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8">
               <div className="inline-block mb-4">
-                <span className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-bold tracking-wide shadow-lg shadow-primary/30">
+                <span className="bg-primary text-black px-5 py-2.5 rounded-full text-sm font-bold tracking-wide shadow-lg shadow-primary/30 border border-primary/20">
                   Exclusively For Women
                 </span>
               </div>
@@ -547,9 +547,9 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="flex items-center justify-center gap-3 p-5 md:p-6 rounded-2xl bg-gradient-to-r from-primary/20 to-accent/20 border-2 border-primary/30 max-w-3xl mx-auto">
-                <Zap className="h-7 w-7 md:h-8 md:w-8 text-primary flex-shrink-0 animate-pulse" />
-                <span className="text-primary font-bold text-base md:text-xl">You can join Any-class, Any-Time, Any-Day</span>
+              <div className="flex items-center justify-center gap-3 p-5 md:p-6 rounded-2xl bg-primary border-2 border-primary/30 max-w-3xl mx-auto shadow-lg shadow-primary/30">
+                <Zap className="h-7 w-7 md:h-8 md:w-8 text-black flex-shrink-0 animate-pulse" />
+                <span className="text-black font-bold text-base md:text-xl">You can join Any-class, Any-Time, Any-Day</span>
               </div>
             </div>
           </div>
@@ -562,7 +562,7 @@ export default function Home() {
         <div className="container px-4 md:px-6 relative max-w-6xl mx-auto">
           <div className="text-center mb-6 md:mb-8">
             <div className="inline-block mb-3 md:mb-4">
-              <span className="bg-gradient-to-r from-primary/20 to-accent/30 text-primary px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-primary/20">
+              <span className="bg-primary text-black px-5 py-2.5 rounded-full text-xs md:text-sm font-bold shadow-lg shadow-primary/30 border border-primary/20">
                 Diverse Workouts
               </span>
             </div>
@@ -605,7 +605,7 @@ export default function Home() {
         <div className="container px-4 md:px-6 relative">
           <div className="text-center mb-8">
             <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-primary/20 to-accent/30 text-primary px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">
+              <span className="bg-primary text-black px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/30 border border-primary/20">
                 💰 Flexible Pricing
               </span>
             </div>
@@ -702,7 +702,7 @@ export default function Home() {
         <div className="container px-4 md:px-6 relative max-w-5xl mx-auto">
           <div className="text-center mb-6 md:mb-8">
             <div className="inline-block mb-3 md:mb-4">
-              <span className="bg-gradient-to-r from-primary to-accent text-primary-foreground px-5 py-1.5 rounded-full text-xs md:text-sm font-bold shadow-lg shadow-primary/30">
+              <span className="bg-primary text-black px-5 py-2.5 rounded-full text-xs md:text-sm font-bold shadow-lg shadow-primary/30 border border-primary/20">
                 Expert Team
               </span>
             </div>
