@@ -471,8 +471,8 @@ export default function Home() {
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Real transformations from real women who took the first step towards a healthier lifestyle</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-4 md:gap-5 max-w-2xl mx-auto">
-            <div className="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+          <div className="grid md:grid-cols-2 gap-3 md:gap-5 max-w-sm md:max-w-2xl mx-auto">
+            <div className="group relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img 
                 src={transformationImage} 
@@ -484,7 +484,7 @@ export default function Home() {
                 <p className="text-white/80 text-sm">Dedication brings results</p>
               </div>
             </div>
-            <div className="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <div className="group relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img 
                 src={onlineClassImage} 
