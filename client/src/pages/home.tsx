@@ -833,56 +833,48 @@ export default function Home() {
       </footer>
 
       {/* Floating Contact Icon - All Screens */}
-      <Sheet open={contactMenuOpen} onOpenChange={setContactMenuOpen}>
-        <SheetTrigger asChild>
-          <div className="fixed bottom-8 right-8 z-50">
-            <button
-              className="group relative h-16 w-16 rounded-full bg-primary hover:bg-primary/90 text-white shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center"
-              aria-label="Contact Us"
-              data-testid="button-floating-contact"
-            >
-              <MessageCircle className="h-7 w-7" />
-            </button>
-          </div>
-        </SheetTrigger>
-        <SheetContent side="bottom" className="h-auto rounded-t-3xl">
-          <div className="py-6 space-y-6">
-            <div className="text-center">
-              <h3 className="text-2xl font-bold mb-2">Contact Us</h3>
-              <p className="text-muted-foreground">Choose your preferred contact method</p>
-            </div>
-            
-            <div className="grid gap-4">
-              <Button
+      <div className="fixed bottom-8 right-8 z-50">
+        <div className="relative">
+          {/* Contact Options - Appear Above Icon */}
+          {contactMenuOpen && (
+            <div className="absolute bottom-20 right-0 w-56 bg-white rounded-2xl shadow-2xl border border-border overflow-hidden mb-2 animate-in slide-in-from-bottom-4 fade-in duration-200">
+              <button
                 onClick={() => {
                   openWhatsApp();
                   setContactMenuOpen(false);
                 }}
-                size="lg"
-                className="h-16 text-lg bg-primary hover:bg-primary/90"
+                className="w-full flex items-center gap-3 px-6 py-4 hover:bg-primary/5 transition-colors border-b"
                 data-testid="button-contact-whatsapp"
               >
-                <SiWhatsapp className="h-6 w-6 mr-3" />
-                WhatsApp
-              </Button>
+                <SiWhatsapp className="h-5 w-5 text-primary" />
+                <span className="font-semibold text-foreground">WhatsApp</span>
+              </button>
               
-              <Button
+              <button
                 onClick={() => {
                   window.location.href = `tel:${PHONE_NUMBER}`;
                   setContactMenuOpen(false);
                 }}
-                variant="outline"
-                size="lg"
-                className="h-16 text-lg border-2"
+                className="w-full flex items-center gap-3 px-6 py-4 hover:bg-primary/5 transition-colors"
                 data-testid="button-contact-call"
               >
-                <Phone className="h-6 w-6 mr-3" />
-                Call Now
-              </Button>
+                <Phone className="h-5 w-5 text-primary" />
+                <span className="font-semibold text-foreground">Call</span>
+              </button>
             </div>
-          </div>
-        </SheetContent>
-      </Sheet>
+          )}
+          
+          {/* Floating Button */}
+          <button
+            onClick={() => setContactMenuOpen(!contactMenuOpen)}
+            className="h-16 w-16 rounded-full bg-primary hover:bg-primary/90 text-white shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center"
+            aria-label="Contact Us"
+            data-testid="button-floating-contact"
+          >
+            <MessageCircle className="h-7 w-7" />
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
