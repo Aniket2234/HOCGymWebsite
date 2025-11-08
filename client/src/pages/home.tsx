@@ -699,13 +699,13 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      {/* Exclusively For Women - Professional Compact Design */}
+      {/* Exclusively For Women - Elegant Black Design */}
       <AnimatedSection variant="fadeIn">
         <section className="py-8 md:py-10 bg-white relative overflow-hidden" id="program">
           <div className="w-full px-3 md:px-5 lg:px-6 relative max-w-6xl mx-auto">
             <div className="text-center mb-6">
               <div className="inline-block mb-3">
-                <span className="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-bold tracking-wide border-2 border-black">
+                <span className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-bold tracking-wide">
                   Exclusively For Women
                 </span>
               </div>
@@ -714,7 +714,7 @@ export default function Home() {
                   Only Designed For <span className="text-pink-500">WOMENS</span>
                 </span>
               </h2>
-              <p className="text-base md:text-lg text-black/90 max-w-3xl mx-auto font-bold">
+              <p className="text-base md:text-lg text-black/70 max-w-3xl mx-auto">
                 Transform your body, elevate your confidence, and embrace a stronger you
               </p>
             </div>
@@ -736,7 +736,7 @@ export default function Home() {
                 <motion.div
                   key={idx}
                   variants={fadeInUp}
-                  className="group relative rounded-lg overflow-hidden border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 aspect-[3/4]"
+                  className="group relative rounded-lg overflow-hidden border-2 border-black/20 hover:border-black transition-all duration-300 hover:shadow-xl"
                 >
                   <img
                     src={banner.src}
@@ -752,46 +752,56 @@ export default function Home() {
             <div className="max-w-5xl mx-auto">
               {/* Features - Single Row */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div className="text-center p-4 rounded-lg bg-primary border-2 border-black" data-testid="feature-live-classes">
-                  <Video className="w-6 h-6 text-white mx-auto mb-2" />
-                  <h4 className="font-bold text-base mb-1 text-white">Daily LIVE Classes</h4>
-                  <p className="text-white/90 text-sm">Expert trainers, interactive sessions</p>
+                <div className="text-center p-5 rounded-lg bg-black border border-black/10 hover:shadow-lg transition-all" data-testid="feature-live-classes">
+                  <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Video className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-base mb-2 text-white">Daily LIVE Classes</h4>
+                  <p className="text-white/80 text-sm">Expert trainers, interactive sessions</p>
                 </div>
-                <div className="text-center p-4 rounded-lg bg-primary border-2 border-black" data-testid="feature-flexible-timing">
-                  <Clock className="w-6 h-6 text-white mx-auto mb-2" />
-                  <h4 className="font-bold text-base mb-1 text-white">Flexible Timing</h4>
-                  <p className="text-white/90 text-sm">Morning & evening slots available</p>
+                <div className="text-center p-5 rounded-lg bg-black border border-black/10 hover:shadow-lg transition-all" data-testid="feature-flexible-timing">
+                  <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Clock className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-base mb-2 text-white">Flexible Timing</h4>
+                  <p className="text-white/80 text-sm">Morning & evening slots available</p>
                 </div>
-                <div className="text-center p-4 rounded-lg bg-primary border-2 border-black" data-testid="feature-women-only">
-                  <Heart className="w-6 h-6 text-white mx-auto mb-2" />
-                  <h4 className="font-bold text-base mb-1 text-white">Women-Only Space</h4>
-                  <p className="text-white/90 text-sm">Safe, supportive community</p>
+                <div className="text-center p-5 rounded-lg bg-black border border-black/10 hover:shadow-lg transition-all" data-testid="feature-women-only">
+                  <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Heart className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-base mb-2 text-white">Women-Only Space</h4>
+                  <p className="text-white/80 text-sm">Safe, supportive community</p>
                 </div>
               </div>
 
               {/* Time Slots - Compact */}
               <div className="grid md:grid-cols-2 gap-4 mb-6">
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-primary border-2 border-black">
-                  <CheckCircle2 className="h-5 w-5 text-white flex-shrink-0" />
+                <div className="flex items-center gap-3 p-4 rounded-lg bg-black border border-black/10">
+                  <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="h-4 w-4 text-white" />
+                  </div>
                   <div>
-                    <span className="font-bold text-white text-sm">Morning Sessions:</span>
-                    <span className="text-white/90 text-sm ml-2">5:45AM • 7AM • 8AM • 11AM</span>
+                    <span className="font-bold text-white text-sm block">Morning Sessions</span>
+                    <span className="text-white/70 text-sm">5:45AM • 7AM • 8AM • 11AM</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-primary border-2 border-black">
-                  <CheckCircle2 className="h-5 w-5 text-white flex-shrink-0" />
+                <div className="flex items-center gap-3 p-4 rounded-lg bg-black border border-black/10">
+                  <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="h-4 w-4 text-white" />
+                  </div>
                   <div>
-                    <span className="font-bold text-white text-sm">Evening Sessions:</span>
-                    <span className="text-white/90 text-sm ml-2">6PM • 7:30PM</span>
+                    <span className="font-bold text-white text-sm block">Evening Sessions</span>
+                    <span className="text-white/70 text-sm">6PM • 7:30PM</span>
                   </div>
                 </div>
               </div>
 
-              {/* Call to Action - Black Border */}
+              {/* Call to Action */}
               <div className="flex justify-center">
-                <div className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 rounded-full bg-primary border-2 border-black hover:scale-105 transition-transform duration-300">
-                  <span className="text-white font-bold text-sm md:text-base" data-testid="text-join-anytime">Join Any Class, Any Time, Any Day</span>
-                </div>
+                <button className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-black text-white font-bold text-sm md:text-base hover:bg-black/90 transition-all hover:scale-105 border-2 border-pink-500" data-testid="button-join-anytime">
+                  Join Any Class, Any Time, Any Day
+                </button>
               </div>
             </div>
           </div>
