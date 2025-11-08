@@ -47,10 +47,9 @@ import workoutVideo from "@assets/5319089-uhd_3840_2160_25fps_1762541494599.mp4"
 import heroVideo from "@assets/4325592-uhd_4096_2160_25fps_1762544359197.mp4";
 import onlineClassImage from "@assets/generated_images/Online_fitness_class_women_c03f2b22.png";
 import transform1 from "@assets/transformation_images/transform1.jpg";
-import transform2 from "@assets/transformation_images/transform2.jpg";
+import transform2 from "@assets/transformation_images/transform2.png";
 import transform3 from "@assets/transformation_images/transform3.jpg";
 import transform4 from "@assets/transformation_images/transform4.jpg";
-import transform5 from "@assets/transformation_images/transform5.jpg";
 import trainer1Image from "@assets/stock_images/indian_female_fitnes_26f1d39f.jpg";
 import trainer2Image from "@assets/generated_images/Zumba_instructor_dancing_portrait_1640c3fe.png";
 import trainer3Image from "@assets/generated_images/Strength_trainer_portrait_with_dumbbells_a7c3e639.png";
@@ -498,7 +497,7 @@ export default function Home() {
               <div className="group relative rounded-lg md:rounded-xl overflow-hidden shadow-md md:shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <img 
-                  src={transform5} 
+                  src={transform2} 
                   alt="Before and after transformation 2" 
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   style={{ aspectRatio: '4/3', maxHeight: '300px' }}
@@ -511,7 +510,7 @@ export default function Home() {
               <div className="group relative rounded-lg md:rounded-xl overflow-hidden shadow-md md:shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <img 
-                  src={transform2} 
+                  src={transform3} 
                   alt="Before and after transformation 3" 
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   style={{ aspectRatio: '4/3', maxHeight: '300px' }}
@@ -524,24 +523,11 @@ export default function Home() {
               <div className="group relative rounded-lg md:rounded-xl overflow-hidden shadow-md md:shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <img 
-                  src={transform3} 
+                  src={transform4} 
                   alt="Before and after transformation 4" 
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   style={{ aspectRatio: '4/3', maxHeight: '300px' }}
                   data-testid="img-transformation-4"
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <p className="text-white font-semibold text-xs md:text-sm">Real Progress</p>
-                </div>
-              </div>
-              <div className="group relative rounded-lg md:rounded-xl overflow-hidden shadow-md md:shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <img 
-                  src={transform4} 
-                  alt="Before and after transformation 5" 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                  style={{ aspectRatio: '4/3', maxHeight: '300px' }}
-                  data-testid="img-transformation-5"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <p className="text-white font-semibold text-xs md:text-sm">Life Changing</p>
