@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
+import { motion } from "framer-motion";
 import { contactFormSchema, type ContactFormData } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -11,6 +12,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
+import { useInView } from "@/hooks/use-in-view";
+import { fadeInUp, fadeIn, scaleIn, staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
 import { 
   Heart, 
   Smile, 
@@ -118,7 +121,12 @@ export default function Home() {
       <header className="fixed top-0 z-50 w-full border-b bg-background">
         <div className="container flex h-20 items-center justify-between px-4 md:px-6">
           <div className="flex items-center">
-            <img src={hocLogo} alt="HOC Fitness" className="h-16 md:h-20 w-auto" />
+            <img 
+              src={hocLogo} 
+              alt="HOC Fitness" 
+              className="h-16 md:h-20 w-auto mix-blend-multiply dark:mix-blend-screen" 
+              style={{ filter: 'brightness(1.2) contrast(1.1)' }}
+            />
           </div>
           
           {/* Mobile Menu */}
