@@ -9,8 +9,9 @@ A professional single-page fitness training website for women's online fitness p
 
 ## Tech Stack
 - **Frontend**: React, TypeScript, Tailwind CSS, Shadcn UI
-- **Backend**: Express.js, Node.js
+- **Backend**: Express.js, Node.js (local dev), Netlify Functions (production)
 - **Email**: Nodemailer with Gmail SMTP
+- **Deployment**: Netlify-ready with serverless functions
 - **Styling**: Custom vibrant green (hsl(100, 85%, 50%)), black, and white color scheme matching HOC Fitness gym branding
 
 ## Email Configuration
@@ -36,6 +37,21 @@ The contact form sends emails using Gmail SMTP via Nodemailer. Required environm
 - Updated color scheme to vibrant green, black, and white matching gym branding
 - Replaced hero image with professional Indian fitness photo
 - Updated trainer section with Indian trainer photos (Snata Pattnaik, Neha Kashyap, Manisha)
+- **Netlify Deployment Ready** (November 2025):
+  - Created serverless function for contact form API
+  - Added netlify.toml configuration
+  - Updated build scripts for Netlify
+  - Added _redirects file for SPA routing
+  - Comprehensive deployment guide in NETLIFY_DEPLOY.md
+
+## Deployment
+This project is configured for Netlify deployment. See **NETLIFY_DEPLOY.md** for complete deployment instructions.
+
+**Quick deployment:**
+1. Push to GitHub/GitLab
+2. Connect to Netlify
+3. Set environment variables: `GMAIL_USER`, `GMAIL_APP_PASSWORD`
+4. Deploy automatically
 
 ## User Preferences
 - Client wants ability to change email and WhatsApp number later
