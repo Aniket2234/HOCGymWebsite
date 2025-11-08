@@ -357,10 +357,10 @@ export default function Home() {
                   Get Started Today
                 </span>
               </div>
-              <h2 className="font-heading font-bold mb-3 md:mb-6 tracking-tight" style={{ fontSize: 'clamp(1.75rem, 5vw, 3.75rem)' }}>
+              <h2 className="font-heading font-bold mb-3 md:mb-4 tracking-tight text-xl md:text-2xl lg:text-3xl">
                 Start Your Transformation
               </h2>
-              <p className="text-foreground/60 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(0.95rem, 2vw, 1.25rem)' }}>
+              <p className="text-foreground/60 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
                 Fill out the form and we'll contact you within 24 hours to discuss your fitness goals
               </p>
             </div>
@@ -840,11 +840,11 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-2">
                   <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                  <a href="tel:+918600126395" className="text-muted-foreground hover:text-primary transition-colors">+91 8600126395</a>
+                  <a href="tel:+918600126395" className="text-muted-foreground hover:text-primary transition-colors cursor-pointer" data-testid="link-phone">+91 8600126395</a>
                 </li>
                 <li className="flex items-start gap-2">
                   <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                  <a href="mailto:abhijeet18012001@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">abhijeet18012001@gmail.com</a>
+                  <a href="mailto:abhijeet18012001@gmail.com" className="text-muted-foreground hover:text-primary transition-colors cursor-pointer" data-testid="link-email">abhijeet18012001@gmail.com</a>
                 </li>
               </ul>
             </div>
