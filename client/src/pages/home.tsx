@@ -667,7 +667,7 @@ export default function Home() {
             <Button
               size="default"
               className="rounded-full px-6"
-              onClick={() => window.open('https://www.instagram.com/hocfitnessofficial/', '_blank')}
+              onClick={() => window.open('https://www.instagram.com/house_of_champions_studio/', '_blank')}
               data-testid="button-follow-instagram"
             >
               <Instagram className="h-4 w-4 mr-2" />
@@ -949,13 +949,13 @@ export default function Home() {
                 Includes all classes – Cardio core, HIIT, Yoga, Zumba, strength training, aerobics, Meditation and Pranayam, pilates, Body toning up & more.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="hover-elevate h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center" data-testid="link-facebook">
+                <a href="https://www.facebook.com/profile.php?id=100063565829026" target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center" data-testid="link-facebook">
                   <Facebook className="h-5 w-5 text-primary" />
                 </a>
-                <a href="#" className="hover-elevate h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center" data-testid="link-instagram">
+                <a href="https://www.instagram.com/house_of_champions_studio/" target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center" data-testid="link-instagram">
                   <Instagram className="h-5 w-5 text-primary" />
                 </a>
-                <a href="#" className="hover-elevate h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center" data-testid="link-youtube">
+                <a href="https://www.youtube.com/@houseofchampions8926" target="_blank" rel="noopener noreferrer" className="hover-elevate h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center" data-testid="link-youtube">
                   <Youtube className="h-5 w-5 text-primary" />
                 </a>
               </div>
