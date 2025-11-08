@@ -65,6 +65,10 @@ import yogaImage from "@assets/generated_images/Yoga_meditation_pose_691f5267.pn
 import zumbaImage from "@assets/generated_images/Zumba_dance_fitness_class_875f492b.png";
 import gymLogo from "@assets/gym-logo.png";
 import hocLogo from "@assets/hoc-logo.jpg";
+import instagramVideo1 from "@assets/instagram_videos/video1.mp4";
+import instagramVideo2 from "@assets/instagram_videos/video2.mp4";
+import instagramVideo3 from "@assets/instagram_videos/video3.mp4";
+import instagramVideo4 from "@assets/instagram_videos/video4.mp4";
 
 const WHATSAPP_NUMBER = "918600126395";
 const PHONE_NUMBER = "+91 8600126395";
@@ -584,7 +588,7 @@ export default function Home() {
             </div>
             <h2 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold mb-3">
               <span className="text-primary">
-                Real Stories, Real Results
+                Workout Highlights
               </span>
             </h2>
             <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
@@ -593,99 +597,67 @@ export default function Home() {
           </div>
           
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Video 1 - Placeholder for downloaded video */}
+            {/* Video 1 */}
             <Card className="overflow-hidden hover-elevate">
               <CardContent className="p-2">
-                <div className="relative bg-muted rounded-md overflow-hidden" style={{ aspectRatio: '9/16' }}>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                    <Instagram className="h-12 w-12 text-muted-foreground mb-4" />
-                    <p className="text-sm text-muted-foreground mb-2">Download video from:</p>
-                    <a 
-                      href="https://www.instagram.com/reel/DP6Ilq_DBlp/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline text-xs"
-                      data-testid="link-video-1"
-                    >
-                      instagram.com/reel/DP6Ilq_DBlp
-                    </a>
-                    <p className="text-xs text-muted-foreground mt-4">
-                      Save as: attached_assets/instagram_videos/video1.mp4
-                    </p>
-                  </div>
-                </div>
+                <video
+                  src={instagramVideo1}
+                  controls
+                  playsInline
+                  className="w-full h-auto rounded-md"
+                  style={{ aspectRatio: '9/16' }}
+                  data-testid="instagram-video-1"
+                >
+                  Your browser does not support the video tag.
+                </video>
               </CardContent>
             </Card>
 
-            {/* Video 2 - Placeholder for downloaded video */}
+            {/* Video 2 */}
             <Card className="overflow-hidden hover-elevate">
               <CardContent className="p-2">
-                <div className="relative bg-muted rounded-md overflow-hidden" style={{ aspectRatio: '9/16' }}>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                    <Instagram className="h-12 w-12 text-muted-foreground mb-4" />
-                    <p className="text-sm text-muted-foreground mb-2">Download video from:</p>
-                    <a 
-                      href="https://www.instagram.com/reel/DOqYABbiSV4/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline text-xs"
-                      data-testid="link-video-2"
-                    >
-                      instagram.com/reel/DOqYABbiSV4
-                    </a>
-                    <p className="text-xs text-muted-foreground mt-4">
-                      Save as: attached_assets/instagram_videos/video2.mp4
-                    </p>
-                  </div>
-                </div>
+                <video
+                  src={instagramVideo2}
+                  controls
+                  playsInline
+                  className="w-full h-auto rounded-md"
+                  style={{ aspectRatio: '9/16' }}
+                  data-testid="instagram-video-2"
+                >
+                  Your browser does not support the video tag.
+                </video>
               </CardContent>
             </Card>
 
-            {/* Video 3 - Placeholder for downloaded video */}
+            {/* Video 3 */}
             <Card className="overflow-hidden hover-elevate">
               <CardContent className="p-2">
-                <div className="relative bg-muted rounded-md overflow-hidden" style={{ aspectRatio: '9/16' }}>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                    <Instagram className="h-12 w-12 text-muted-foreground mb-4" />
-                    <p className="text-sm text-muted-foreground mb-2">Download video from:</p>
-                    <a 
-                      href="https://www.instagram.com/reel/DNmyhHlpq5f/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline text-xs"
-                      data-testid="link-video-3"
-                    >
-                      instagram.com/reel/DNmyhHlpq5f
-                    </a>
-                    <p className="text-xs text-muted-foreground mt-4">
-                      Save as: attached_assets/instagram_videos/video3.mp4
-                    </p>
-                  </div>
-                </div>
+                <video
+                  src={instagramVideo3}
+                  controls
+                  playsInline
+                  className="w-full h-auto rounded-md"
+                  style={{ aspectRatio: '9/16' }}
+                  data-testid="instagram-video-3"
+                >
+                  Your browser does not support the video tag.
+                </video>
               </CardContent>
             </Card>
 
-            {/* Video 4 - Placeholder for downloaded video */}
+            {/* Video 4 */}
             <Card className="overflow-hidden hover-elevate">
               <CardContent className="p-2">
-                <div className="relative bg-muted rounded-md overflow-hidden" style={{ aspectRatio: '9/16' }}>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                    <Instagram className="h-12 w-12 text-muted-foreground mb-4" />
-                    <p className="text-sm text-muted-foreground mb-2">Download video from:</p>
-                    <a 
-                      href="https://www.instagram.com/reel/DGaqoK7TY0b/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline text-xs"
-                      data-testid="link-video-4"
-                    >
-                      instagram.com/reel/DGaqoK7TY0b
-                    </a>
-                    <p className="text-xs text-muted-foreground mt-4">
-                      Save as: attached_assets/instagram_videos/video4.mp4
-                    </p>
-                  </div>
-                </div>
+                <video
+                  src={instagramVideo4}
+                  controls
+                  playsInline
+                  className="w-full h-auto rounded-md"
+                  style={{ aspectRatio: '9/16' }}
+                  data-testid="instagram-video-4"
+                >
+                  Your browser does not support the video tag.
+                </video>
               </CardContent>
             </Card>
           </div>
