@@ -513,7 +513,7 @@ export default function Home() {
                   src={transform3} 
                   alt="Before and after transformation 3" 
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                  style={{ aspectRatio: '4/3', maxHeight: '300px' }}
+                  style={{ aspectRatio: '4/3', maxHeight: '300px', objectPosition: 'center top' }}
                   data-testid="img-transformation-3"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
@@ -526,7 +526,7 @@ export default function Home() {
                   src={transform4} 
                   alt="Before and after transformation 4" 
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                  style={{ aspectRatio: '4/3', maxHeight: '300px' }}
+                  style={{ aspectRatio: '4/3', maxHeight: '300px', objectPosition: 'center top' }}
                   data-testid="img-transformation-4"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
