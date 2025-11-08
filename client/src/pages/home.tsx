@@ -705,13 +705,13 @@ export default function Home() {
           <div className="w-full px-3 md:px-5 lg:px-6 relative max-w-6xl mx-auto">
             <div className="text-center mb-6">
               <div className="inline-block mb-3">
-                <span className="bg-primary text-black px-5 py-2.5 rounded-full text-sm font-bold tracking-wide">
+                <span className="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-bold tracking-wide border-2 border-black">
                   Exclusively For Women
                 </span>
               </div>
               <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
-                <span className="text-primary">
-                  Only Designed For Ladies
+                <span className="text-black">
+                  Only Designed For <span className="text-pink-500">WOMENS</span>
                 </span>
               </h2>
               <p className="text-base md:text-lg text-black/90 max-w-3xl mx-auto font-bold">
@@ -752,34 +752,37 @@ export default function Home() {
             <div className="max-w-5xl mx-auto">
               {/* Features - Single Row */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div className="text-center p-4 rounded-lg bg-black/5" data-testid="feature-live-classes">
-                  <h4 className="font-bold text-base mb-1 text-black">Daily LIVE Classes</h4>
-                  <p className="text-black/70 text-sm">Expert trainers, interactive sessions</p>
+                <div className="text-center p-4 rounded-lg bg-primary border-2 border-black" data-testid="feature-live-classes">
+                  <Video className="w-6 h-6 text-white mx-auto mb-2" />
+                  <h4 className="font-bold text-base mb-1 text-white">Daily LIVE Classes</h4>
+                  <p className="text-white/90 text-sm">Expert trainers, interactive sessions</p>
                 </div>
-                <div className="text-center p-4 rounded-lg bg-black/5" data-testid="feature-flexible-timing">
-                  <h4 className="font-bold text-base mb-1 text-black">Flexible Timing</h4>
-                  <p className="text-black/70 text-sm">Morning & evening slots available</p>
+                <div className="text-center p-4 rounded-lg bg-primary border-2 border-black" data-testid="feature-flexible-timing">
+                  <Clock className="w-6 h-6 text-white mx-auto mb-2" />
+                  <h4 className="font-bold text-base mb-1 text-white">Flexible Timing</h4>
+                  <p className="text-white/90 text-sm">Morning & evening slots available</p>
                 </div>
-                <div className="text-center p-4 rounded-lg bg-black/5" data-testid="feature-women-only">
-                  <h4 className="font-bold text-base mb-1 text-black">Women-Only Space</h4>
-                  <p className="text-black/70 text-sm">Safe, supportive community</p>
+                <div className="text-center p-4 rounded-lg bg-primary border-2 border-black" data-testid="feature-women-only">
+                  <Heart className="w-6 h-6 text-white mx-auto mb-2" />
+                  <h4 className="font-bold text-base mb-1 text-white">Women-Only Space</h4>
+                  <p className="text-white/90 text-sm">Safe, supportive community</p>
                 </div>
               </div>
 
               {/* Time Slots - Compact */}
               <div className="grid md:grid-cols-2 gap-4 mb-6">
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-white border-2 border-primary/20">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
+                <div className="flex items-center gap-3 p-4 rounded-lg bg-primary border-2 border-black">
+                  <CheckCircle2 className="h-5 w-5 text-white flex-shrink-0" />
                   <div>
-                    <span className="font-bold text-black text-sm">Morning Sessions:</span>
-                    <span className="text-black/70 text-sm ml-2">5:45AM • 7AM • 8AM • 11AM</span>
+                    <span className="font-bold text-white text-sm">Morning Sessions:</span>
+                    <span className="text-white/90 text-sm ml-2">5:45AM • 7AM • 8AM • 11AM</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-white border-2 border-primary/20">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
+                <div className="flex items-center gap-3 p-4 rounded-lg bg-primary border-2 border-black">
+                  <CheckCircle2 className="h-5 w-5 text-white flex-shrink-0" />
                   <div>
-                    <span className="font-bold text-black text-sm">Evening Sessions:</span>
-                    <span className="text-black/70 text-sm ml-2">6PM • 7:30PM</span>
+                    <span className="font-bold text-white text-sm">Evening Sessions:</span>
+                    <span className="text-white/90 text-sm ml-2">6PM • 7:30PM</span>
                   </div>
                 </div>
               </div>
@@ -787,8 +790,7 @@ export default function Home() {
               {/* Call to Action - Black Border */}
               <div className="flex justify-center">
                 <div className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 rounded-full bg-primary border-2 border-black hover:scale-105 transition-transform duration-300">
-                  <Zap className="h-5 w-5 text-black flex-shrink-0" />
-                  <span className="text-black font-bold text-sm md:text-base" data-testid="text-join-anytime">Join Any Class, Any Time, Any Day</span>
+                  <span className="text-white font-bold text-sm md:text-base" data-testid="text-join-anytime">Join Any Class, Any Time, Any Day</span>
                 </div>
               </div>
             </div>
