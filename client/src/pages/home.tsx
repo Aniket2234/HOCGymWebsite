@@ -578,34 +578,34 @@ export default function Home() {
       </section>
 
       {/* Instagram Videos Section */}
-      <section className="py-10 md:py-14 bg-background" id="instagram-videos">
+      <section className="py-8 md:py-10 bg-background" id="instagram-videos">
         <div className="container px-4 md:px-6">
-          <div className="text-center mb-8">
-            <div className="inline-block mb-4">
-              <span className="bg-primary text-black px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/30 border border-primary/20">
+          <div className="text-center mb-6">
+            <div className="inline-block mb-3">
+              <span className="bg-primary text-black px-4 py-2 rounded-full text-xs font-bold shadow-lg shadow-primary/30 border border-primary/20">
                 Follow Our Journey
               </span>
             </div>
-            <h2 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold mb-3">
+            <h2 className="font-heading text-lg md:text-xl lg:text-2xl font-bold mb-2">
               <span className="text-primary">
                 Workout Highlights
               </span>
             </h2>
-            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xs md:text-sm text-muted-foreground max-w-xl mx-auto">
               Watch our community's inspiring transformation journey
             </p>
           </div>
           
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="max-w-3xl mx-auto grid grid-cols-2 gap-3 md:gap-4">
             {/* Video 1 */}
             <Card className="overflow-hidden hover-elevate">
-              <CardContent className="p-2">
+              <CardContent className="p-1.5">
                 <video
                   src={instagramVideo1}
                   controls
                   playsInline
                   className="w-full h-auto rounded-md"
-                  style={{ aspectRatio: '9/16' }}
+                  style={{ aspectRatio: '9/16', maxHeight: '400px' }}
                   data-testid="instagram-video-1"
                 >
                   Your browser does not support the video tag.
@@ -615,13 +615,13 @@ export default function Home() {
 
             {/* Video 2 */}
             <Card className="overflow-hidden hover-elevate">
-              <CardContent className="p-2">
+              <CardContent className="p-1.5">
                 <video
                   src={instagramVideo2}
                   controls
                   playsInline
                   className="w-full h-auto rounded-md"
-                  style={{ aspectRatio: '9/16' }}
+                  style={{ aspectRatio: '9/16', maxHeight: '400px' }}
                   data-testid="instagram-video-2"
                 >
                   Your browser does not support the video tag.
@@ -631,13 +631,13 @@ export default function Home() {
 
             {/* Video 3 */}
             <Card className="overflow-hidden hover-elevate">
-              <CardContent className="p-2">
+              <CardContent className="p-1.5">
                 <video
                   src={instagramVideo3}
                   controls
                   playsInline
                   className="w-full h-auto rounded-md"
-                  style={{ aspectRatio: '9/16' }}
+                  style={{ aspectRatio: '9/16', maxHeight: '400px' }}
                   data-testid="instagram-video-3"
                 >
                   Your browser does not support the video tag.
@@ -647,13 +647,13 @@ export default function Home() {
 
             {/* Video 4 */}
             <Card className="overflow-hidden hover-elevate">
-              <CardContent className="p-2">
+              <CardContent className="p-1.5">
                 <video
                   src={instagramVideo4}
                   controls
                   playsInline
                   className="w-full h-auto rounded-md"
-                  style={{ aspectRatio: '9/16' }}
+                  style={{ aspectRatio: '9/16', maxHeight: '400px' }}
                   data-testid="instagram-video-4"
                 >
                   Your browser does not support the video tag.
@@ -663,14 +663,14 @@ export default function Home() {
           </div>
 
           {/* Call-to-Action */}
-          <div className="text-center mt-8">
+          <div className="text-center mt-6">
             <Button
-              size="lg"
-              className="rounded-full px-8"
+              size="default"
+              className="rounded-full px-6"
               onClick={() => window.open('https://www.instagram.com/hocfitnessofficial/', '_blank')}
               data-testid="button-follow-instagram"
             >
-              <Instagram className="h-5 w-5 mr-2" />
+              <Instagram className="h-4 w-4 mr-2" />
               Follow Us on Instagram
             </Button>
           </div>
