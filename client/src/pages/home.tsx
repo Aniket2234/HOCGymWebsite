@@ -853,101 +853,192 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      {/* Pricing Packages */}
+      {/* Pricing Packages - Redesigned */}
       <AnimatedSection variant="slideInLeft">
-        <section className="py-6 md:py-8 relative overflow-hidden" id="pricing">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+        <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden" id="pricing">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 dark:from-purple-950/20 dark:via-blue-950/20 dark:to-pink-950/20" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.15),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(236,72,153,0.15),transparent_50%)]" />
         <div className="container px-4 md:px-6 relative">
-          <div className="text-center mb-8">
-            <div className="inline-block mb-4">
-              <span className="bg-primary text-black px-5 py-2.5 rounded-full text-sm font-bold border border-primary/20">
-                💰 Flexible Pricing
+          <div className="text-center mb-12 md:mb-16">
+            <motion.div 
+              className="inline-block mb-5"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-full text-sm md:text-base font-bold shadow-lg shadow-purple-500/30">
+                Investment Plans
               </span>
-            </div>
-            <h2 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold mb-3 tracking-tight">
-              Choose Your Package
-            </h2>
-            <p className="text-sm md:text-base text-foreground/60 max-w-2xl mx-auto">Flexible plans designed for your success and transformation journey</p>
+            </motion.div>
+            <motion.h2 
+              className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 bg-clip-text text-transparent">
+                Transform Your Life Today
+              </span>
+            </motion.h2>
+            <motion.p 
+              className="text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto font-medium leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Choose the perfect plan that fits your lifestyle and commit to your wellness journey
+            </motion.p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             {[
               {
-                name: "1 Month",
-                classes: "26 Classes",
+                name: "Starter",
+                duration: "1 Month Plan",
+                classes: "26 Live Classes",
                 price: "₹2,999",
+                pricePerClass: "₹115/class",
+                description: "Perfect for beginners starting their fitness journey",
                 features: [
-                  "Customized Diet Plan",
-                  "All fitness classes included",
-                  "Cardio, HIIT, Yoga, Zumba",
-                  "Strength training & aerobics",
-                  "Meditation & Pranayam"
-                ]
-              },
-              {
-                name: "3 Months",
-                classes: "85 Classes",
-                price: "₹6,999",
-                features: [
-                  "Customized Diet Plan",
-                  "All fitness classes included",
-                  "Cardio, HIIT, Yoga, Zumba",
-                  "Body toning & Pilates",
-                  "Functional training",
-                  "Best value for commitment"
+                  "Personalized Nutrition Guide",
+                  "Access to All Class Types",
+                  "Cardio, HIIT & Yoga Sessions",
+                  "Strength & Aerobic Training",
+                  "Mindfulness & Meditation",
+                  "Community Support Access"
                 ],
-                featured: true
+                gradient: "from-blue-500 to-cyan-500",
+                bgGradient: "from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30",
+                borderColor: "border-blue-200 dark:border-blue-800"
               },
               {
-                name: "6 Months",
+                name: "Champion",
+                duration: "3 Months Plan",
+                classes: "85 Live Classes",
+                price: "₹6,999",
+                pricePerClass: "₹82/class",
+                description: "Most popular choice for serious transformation",
+                features: [
+                  "Complete Diet & Meal Planning",
+                  "Unlimited Class Variety",
+                  "Advanced HIIT & Cardio",
+                  "Body Sculpting & Pilates",
+                  "Functional Fitness Training",
+                  "Priority Trainer Support",
+                  "Progress Tracking System",
+                  "Exclusive Community Groups"
+                ],
+                featured: true,
+                gradient: "from-purple-600 to-pink-600",
+                bgGradient: "from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30",
+                borderColor: "border-purple-300 dark:border-purple-700",
+                badge: "Best Value"
+              },
+              {
+                name: "Elite",
+                duration: "6 Months Plan",
                 classes: "UNLIMITED Classes",
                 price: "₹9,999",
+                pricePerClass: "Unlimited",
+                description: "Ultimate commitment for lasting transformation",
                 features: [
-                  "Customized Diet Plan",
-                  "Unlimited class access",
-                  "All fitness programs",
-                  "Priority support",
-                  "Maximum flexibility",
-                  "Best for transformation"
-                ]
+                  "Premium Nutrition Consultation",
+                  "Unlimited Class Access 24/7",
+                  "All Premium Programs",
+                  "VIP Trainer Support",
+                  "Flexible Schedule Options",
+                  "Lifetime Community Access",
+                  "Monthly Body Assessment",
+                  "Exclusive Wellness Workshops"
+                ],
+                gradient: "from-pink-600 to-rose-600",
+                bgGradient: "from-pink-50 to-rose-50 dark:from-pink-950/30 dark:to-rose-950/30",
+                borderColor: "border-pink-200 dark:border-pink-800"
               },
             ].map((pkg, i) => (
-              <Card key={i} className={`group p-4 md:p-5 hover-elevate transition-all duration-500 ${pkg.featured ? 'border-primary border-2 shadow-lg shadow-primary/15 bg-gradient-to-br from-primary/5 to-accent/5' : 'border-primary/10 shadow-md shadow-primary/5 bg-gradient-to-br from-background to-accent/5'} hover:shadow-lg hover:shadow-primary/15 hover:border-primary/30 relative overflow-hidden`}>
-                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent ${pkg.featured ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity duration-500`} />
-                <CardContent className="p-0 space-y-3 md:space-y-4">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className={`${pkg.featured ? 'md:scale-105 lg:scale-110 z-10' : ''}`}
+              >
+                <Card className={`group h-full p-6 md:p-7 hover-elevate transition-all duration-500 ${pkg.featured ? 'border-4 shadow-2xl' : 'border-2 shadow-lg'} ${pkg.borderColor} bg-gradient-to-br ${pkg.bgGradient} hover:shadow-2xl relative overflow-hidden`}>
+                  <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${pkg.gradient} ${pkg.featured ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity duration-500`} />
                   {pkg.featured && (
-                    <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-primary to-primary/90 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm shadow-primary/30">
-                      <Star className="h-3 w-3 fill-white" />
-                      Most Popular
-                    </div>
+                    <div className="absolute -right-12 -top-12 w-32 h-32 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl" />
                   )}
-                  <div>
-                    <h3 className="font-heading text-lg md:text-xl font-bold mb-1 group-hover:text-primary transition-colors">{pkg.name}</h3>
-                    <p className="text-foreground/60 font-medium text-xs md:text-sm">{pkg.classes}</p>
-                  </div>
-                  <div className="font-heading text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    {pkg.price}
-                  </div>
-                  <ul className="space-y-2">
-                    {pkg.features.map((feature, j) => (
-                      <li key={j} className="flex items-start gap-2 group/item">
-                        <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform" />
-                        <span className="text-xs md:text-sm text-foreground/80 leading-relaxed">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button 
-                    onClick={openWhatsApp} 
-                    className={`w-full rounded-full py-4 text-xs md:text-sm font-semibold transition-all duration-300 ${pkg.featured ? 'shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40' : 'hover:bg-primary hover:text-primary-foreground'}`}
-                    variant={pkg.featured ? "default" : "outline"}
-                    data-testid={`button-select-${pkg.name.toLowerCase().replace(' ', '-')}`}
-                  >
-                    <MessageCircle className="h-3.5 w-3.5 mr-1.5" />
-                    Select Plan
-                  </Button>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-0 space-y-5 md:space-y-6 relative">
+                    {pkg.badge && (
+                      <div className={`inline-flex items-center gap-2 bg-gradient-to-r ${pkg.gradient} text-white px-4 py-2 rounded-full text-xs md:text-sm font-bold shadow-lg`}>
+                        <Star className="h-4 w-4 fill-white" />
+                        {pkg.badge}
+                      </div>
+                    )}
+                    <div>
+                      <h3 className={`font-heading text-2xl md:text-3xl font-extrabold mb-2 bg-gradient-to-r ${pkg.gradient} bg-clip-text text-transparent`}>
+                        {pkg.name}
+                      </h3>
+                      <p className="text-slate-600 dark:text-slate-400 font-semibold text-sm md:text-base mb-1">{pkg.duration}</p>
+                      <p className="text-slate-500 dark:text-slate-500 text-xs md:text-sm italic">{pkg.description}</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className={`font-heading text-4xl md:text-5xl font-black bg-gradient-to-r ${pkg.gradient} bg-clip-text text-transparent`}>
+                        {pkg.price}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs md:text-sm text-slate-500 dark:text-slate-400 font-medium">{pkg.classes}</span>
+                        <span className="text-xs text-slate-400">•</span>
+                        <span className={`text-xs md:text-sm font-bold bg-gradient-to-r ${pkg.gradient} bg-clip-text text-transparent`}>{pkg.pricePerClass}</span>
+                      </div>
+                    </div>
+                    <div className="h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent" />
+                    <ul className="space-y-3">
+                      {pkg.features.map((feature, j) => (
+                        <li key={j} className="flex items-start gap-3 group/item">
+                          <div className={`h-5 w-5 rounded-full bg-gradient-to-r ${pkg.gradient} flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform`}>
+                            <CheckCircle2 className="h-3 w-3 text-white" />
+                          </div>
+                          <span className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-medium">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button 
+                      onClick={openWhatsApp} 
+                      className={`w-full rounded-full py-6 text-sm md:text-base font-bold transition-all duration-300 bg-gradient-to-r ${pkg.gradient} hover:opacity-90 text-white shadow-lg ${pkg.featured ? 'shadow-purple-500/50 hover:shadow-purple-500/70' : 'hover:shadow-xl'}`}
+                      data-testid={`button-select-${pkg.name.toLowerCase().replace(' ', '-')}`}
+                    >
+                      <MessageCircle className="h-5 w-5 mr-2" />
+                      Start {pkg.name} Plan
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
+          <motion.div 
+            className="text-center mt-12 md:mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-4 font-medium">
+              Not sure which plan is right for you? Let's talk!
+            </p>
+            <Button 
+              onClick={openWhatsApp}
+              variant="outline"
+              size="lg"
+              className="rounded-full px-8 py-6 border-2 border-purple-300 dark:border-purple-700 hover:bg-gradient-to-r from-purple-600 to-pink-600 hover:text-white hover:border-transparent font-bold shadow-md"
+            >
+              <MessageCircle className="h-5 w-5 mr-2" />
+              Get Free Consultation
+            </Button>
+          </motion.div>
         </div>
         </section>
       </AnimatedSection>
