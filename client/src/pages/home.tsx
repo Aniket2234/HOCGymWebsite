@@ -471,9 +471,9 @@ export default function Home() {
               </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-12 mb-12 items-start">
               {/* Left Side: Our Story and Our Vision */}
-              <div className="space-y-8">
+              <div className="space-y-10 lg:space-y-12 max-w-2xl">
                 {/* Our Story */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -487,7 +487,7 @@ export default function Home() {
                     House of Champions was founded with a singular vision: to make professional fitness training accessible to everyone. We believe that every individual deserves access to expert guidance, personalized programs, and a supportive community that celebrates their fitness journey.
                   </p>
                   <p className="text-white/90 text-sm md:text-base leading-relaxed">
-                    What started as a passion project has grown into a thriving online fitness community, helping thousands of men and women transform their lives through dedicated training, proper nutrition, and unwavering support.
+                    What started as a passion project has grown into a thriving online fitness community, helping thousands transform their lives through dedicated training, proper nutrition, and unwavering support.
                   </p>
                 </motion.div>
 
@@ -532,11 +532,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="flex flex-col items-center lg:items-start space-y-6"
+                className="flex flex-col items-start space-y-6 max-w-sm lg:pl-6"
               >
                 {/* Owner Photo */}
-                <div className="w-full max-w-md">
-                  <div className="relative rounded-lg overflow-hidden border-2 border-primary aspect-square">
+                <div className="w-full">
+                  <div className="relative rounded-lg overflow-hidden border-2 border-primary aspect-[3/4]">
                     <img 
                       src={ownerPhoto} 
                       alt="House of Champions Owner" 
@@ -547,10 +547,10 @@ export default function Home() {
                 </div>
 
                 {/* Meet Our Founder */}
-                <div className="w-full max-w-md text-center lg:text-left space-y-3">
+                <div className="w-full text-left space-y-3">
                   <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-founder">Meet Our Founder</h3>
                   <p className="text-white/90 text-sm md:text-base leading-relaxed">
-                    With years of experience in fitness training and a deep passion for empowering people, our founder created House of Champions to share professional fitness expertise with everyone around the world. Every program is designed with care, backed by expertise, and driven by a commitment to your success.
+                    With years of experience in fitness training and a deep passion for empowering people, our founder created House of Champions to share professional fitness expertise with everyone around the world.
                   </p>
                   <p className="text-white font-semibold text-sm md:text-base italic">
                     "Your transformation is our mission. Every rep, every session, every victory - we celebrate it all with you."
