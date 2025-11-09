@@ -857,7 +857,7 @@ export default function Home() {
       <AnimatedSection variant="slideInLeft">
         <section className="h-screen bg-black flex items-center justify-center relative overflow-hidden py-6" id="pricing">
         <div className="w-full px-3 md:px-4 lg:px-6 max-w-7xl mx-auto">
-          <div className="text-center mb-8 md:mb-10">
+          <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <motion.h2 
               className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
               initial={{ opacity: 0, y: 20 }}
@@ -938,7 +938,7 @@ export default function Home() {
                   transform: pkg.featured ? 'translateZ(50px)' : i === 0 ? 'translateZ(-20px) rotateY(5deg)' : 'translateZ(-20px) rotateY(-5deg)'
                 }}
               >
-                <Card className={`group h-full p-5 md:p-6 lg:p-7 hover-elevate transition-all duration-500 bg-white border-2 border-white/20 hover:border-white/40 shadow-2xl relative overflow-hidden ${pkg.featured ? 'shadow-primary/20' : ''}`}>
+                <Card className={`group h-full p-5 md:p-6 lg:p-7 hover-elevate transition-all duration-500 bg-white border-4 border-primary hover:border-primary/80 shadow-2xl relative overflow-hidden ${pkg.featured ? 'shadow-primary/20' : ''}`}>
                   {pkg.featured && (
                     <div className="absolute -right-8 -top-8 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
                   )}
@@ -1048,7 +1048,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <Card className="group p-5 hover-elevate transition-all duration-500 bg-white border-2 border-white/20 hover:border-white/40 shadow-xl relative overflow-hidden">
+                <Card className="group p-5 hover-elevate transition-all duration-500 bg-white border-4 border-primary hover:border-primary/80 shadow-xl relative overflow-hidden">
                   <CardContent className="p-0 space-y-3 relative">
                     {pkg.badge && (
                       <div className="inline-flex items-center gap-1.5 bg-black text-white px-3 py-1.5 rounded-full text-xs font-bold">
