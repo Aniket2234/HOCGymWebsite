@@ -1066,18 +1066,193 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      {/* Contact Form Section - Two Column Layout */}
+      {/* Contact Section - Black Background with White Cards */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-12 md:py-16 lg:py-20 bg-background" id="contact">
+        <section className="py-12 md:py-16 lg:py-20 bg-black" id="contact">
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-              {/* Left Column - Contact Form */}
-              <div className="space-y-6">
-                <div>
-                  <h2 className="font-heading text-2xl md:text-3xl font-bold mb-2">
-                    Send Us a Message
-                  </h2>
-                </div>
+            <div className="text-center mb-10 md:mb-12">
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary">
+                Get In Touch
+              </h2>
+              <p className="text-sm md:text-base lg:text-lg text-white mx-auto font-medium">
+                We'd love to hear from you. Reach out to us today!
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 mb-8">
+              {/* Left Column - Contact Details Card */}
+              <Card className="bg-white p-6 md:p-8 h-full">
+                <CardContent className="p-0 space-y-8">
+                  <div>
+                    <h3 className="font-heading text-2xl md:text-3xl font-bold mb-6 text-black">
+                      Contact Details
+                    </h3>
+                    
+                    <div className="space-y-6">
+                      {/* Phone Number */}
+                      <div className="flex items-start gap-4">
+                        <div className="h-12 w-12 rounded-full bg-black/5 flex items-center justify-center flex-shrink-0">
+                          <Phone className="h-6 w-6 text-black" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-black text-lg mb-1">Phone</p>
+                          <a 
+                            href={`tel:${PHONE_NUMBER}`}
+                            className="text-muted-foreground hover:text-black transition-colors text-base"
+                          >
+                            {PHONE_NUMBER}
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Email */}
+                      <div className="flex items-start gap-4">
+                        <div className="h-12 w-12 rounded-full bg-black/5 flex items-center justify-center flex-shrink-0">
+                          <Mail className="h-6 w-6 text-black" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-black text-lg mb-1">Email</p>
+                          <a 
+                            href="mailto:houseofchampions2020@gmail.com"
+                            className="text-muted-foreground hover:text-black transition-colors text-base"
+                          >
+                            houseofchampions2020@gmail.com
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Address */}
+                      <div className="flex items-start gap-4">
+                        <div className="h-12 w-12 rounded-full bg-black/5 flex items-center justify-center flex-shrink-0">
+                          <MapPin className="h-6 w-6 text-black" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-black text-lg mb-1">Address</p>
+                          <a 
+                            href="https://www.google.com/maps/place/House+Of+Champions+Gym/@19.2361639,73.1543851,17z/data=!3m1!4b1!4m6!3m5!1s0x3be795049d6e75a1:0xa3bb5dfe6f0afeaa!8m2!3d19.2361639!4d73.15696!16s%2Fg%2F11w18ww9mr?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-black transition-colors text-base"
+                          >
+                            Basement, Gangagodavari Apt, below Sundar Classes, Katemanivali, Naka, Kalyan, Maharashtra 421306
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Social Media */}
+                      <div className="flex items-start gap-4">
+                        <div className="h-12 w-12 rounded-full bg-black/5 flex items-center justify-center flex-shrink-0">
+                          <Users className="h-6 w-6 text-black" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-semibold text-black text-lg mb-3">Follow Us</p>
+                          <div className="flex flex-wrap gap-3">
+                            <a 
+                              href="https://www.facebook.com/house_of_champions_studio/" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="h-10 w-10 rounded-full bg-black/5 flex items-center justify-center hover-elevate transition-all"
+                              data-testid="link-facebook-contact"
+                            >
+                              <Facebook className="h-5 w-5 text-black" />
+                            </a>
+                            <a 
+                              href="https://www.instagram.com/house_of_champions_studio/" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="h-10 w-10 rounded-full bg-black/5 flex items-center justify-center hover-elevate transition-all"
+                              data-testid="link-instagram-contact"
+                            >
+                              <Instagram className="h-5 w-5 text-black" />
+                            </a>
+                            <a 
+                              href="https://www.youtube.com/@houseofchampions8926" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="h-10 w-10 rounded-full bg-black/5 flex items-center justify-center hover-elevate transition-all"
+                              data-testid="link-youtube-contact"
+                            >
+                              <Youtube className="h-5 w-5 text-black" />
+                            </a>
+                            <a 
+                              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="h-10 w-10 rounded-full bg-black/5 flex items-center justify-center hover-elevate transition-all"
+                              data-testid="link-whatsapp-contact"
+                            >
+                              <MessageCircle className="h-5 w-5 text-black" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Google Map */}
+                      <div className="pt-4">
+                        <div className="rounded-lg overflow-hidden border-2 border-gray-200">
+                          <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.6867458926443!2d73.15438507501688!3d19.236163882025976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795049d6e75a1%3A0xa3bb5dfe6f0afeaa!2sHouse%20Of%20Champions%20Gym!5e0!3m2!1sen!2sin!4v1731141928000!5m2!1sen!2sin"
+                            width="100%"
+                            height="250"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="House of Champions Location"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Right Column - Business Hours Card */}
+              <Card className="bg-white p-6 md:p-8 h-full">
+                <CardContent className="p-0">
+                  <h3 className="font-heading text-2xl md:text-3xl font-bold mb-6 text-black">
+                    Business Hours
+                  </h3>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <Clock className="h-8 w-8 text-black flex-shrink-0 mt-1" />
+                      <div>
+                        <p className="font-bold text-black text-xl mb-2">Monday - Friday</p>
+                        <p className="text-muted-foreground text-lg">8:00 AM - 6:00 PM</p>
+                      </div>
+                    </div>
+                    
+                    <div className="h-px bg-gray-200" />
+                    
+                    <div className="flex items-start gap-4">
+                      <Clock className="h-8 w-8 text-black flex-shrink-0 mt-1" />
+                      <div>
+                        <p className="font-bold text-black text-xl mb-2">Saturday</p>
+                        <p className="text-muted-foreground text-lg">9:00 AM - 4:00 PM</p>
+                      </div>
+                    </div>
+                    
+                    <div className="h-px bg-gray-200" />
+                    
+                    <div className="flex items-start gap-4">
+                      <Clock className="h-8 w-8 text-black flex-shrink-0 mt-1" />
+                      <div>
+                        <p className="font-bold text-black text-xl mb-2">Sunday</p>
+                        <p className="text-muted-foreground text-lg">Emergency Services Only</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Contact Form - Full Width Below */}
+            <Card className="bg-white p-6 md:p-8">
+              <CardContent className="p-0">
+                <h3 className="font-heading text-2xl md:text-3xl font-bold mb-6 text-black">
+                  Send Us a Message
+                </h3>
                 
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
@@ -1087,9 +1262,9 @@ export default function Home() {
                         name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-medium">Name</FormLabel>
+                            <FormLabel className="text-sm font-medium text-black">Name</FormLabel>
                             <FormControl>
-                              <Input placeholder="Your name" {...field} data-testid="input-name" className="bg-background" />
+                              <Input placeholder="Your name" {...field} data-testid="input-name" className="bg-white" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -1100,9 +1275,9 @@ export default function Home() {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-sm font-medium">Email</FormLabel>
+                            <FormLabel className="text-sm font-medium text-black">Email</FormLabel>
                             <FormControl>
-                              <Input placeholder="Your email" type="email" {...field} data-testid="input-email" className="bg-background" />
+                              <Input placeholder="Your email" type="email" {...field} data-testid="input-email" className="bg-white" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -1115,9 +1290,9 @@ export default function Home() {
                       name="contactNumber"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium">Phone Number</FormLabel>
+                          <FormLabel className="text-sm font-medium text-black">Phone Number</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your phone number" {...field} data-testid="input-contact" className="bg-background" />
+                            <Input placeholder="Your phone number" {...field} data-testid="input-contact" className="bg-white" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -1129,10 +1304,10 @@ export default function Home() {
                       name="purpose"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium">Service Needed</FormLabel>
+                          <FormLabel className="text-sm font-medium text-black">Service Needed</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger data-testid="select-purpose" className="bg-background">
+                              <SelectTrigger data-testid="select-purpose" className="bg-white">
                                 <SelectValue placeholder="Select a service" />
                               </SelectTrigger>
                             </FormControl>
@@ -1152,7 +1327,7 @@ export default function Home() {
                     <Button 
                       type="submit" 
                       size="lg" 
-                      className="w-full md:w-auto px-8 bg-yellow-500 hover:bg-yellow-600 text-black font-bold" 
+                      className="w-full md:w-auto px-8 bg-primary hover:bg-primary/90 text-black font-bold" 
                       disabled={contactMutation.isPending}
                       data-testid="button-submit-form"
                     >
@@ -1167,67 +1342,8 @@ export default function Home() {
                     </Button>
                   </form>
                 </Form>
-              </div>
-
-              {/* Right Column - Business Hours & Location */}
-              <div className="space-y-8">
-                {/* Business Hours */}
-                <div className="space-y-4">
-                  <h3 className="font-heading text-xl md:text-2xl font-bold">Business Hours</h3>
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <Clock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-semibold">Monday - Friday</p>
-                        <p className="text-sm text-muted-foreground">8:00 AM - 6:00 PM</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <Clock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-semibold">Saturday</p>
-                        <p className="text-sm text-muted-foreground">9:00 AM - 4:00 PM</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <Clock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-semibold">Sunday</p>
-                        <p className="text-sm text-muted-foreground">Emergency Services Only</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Location */}
-                <div className="space-y-4">
-                  <h3 className="font-heading text-xl md:text-2xl font-bold">Our Location</h3>
-                  <div className="rounded-lg overflow-hidden border">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.6867458926443!2d73.15438507501688!3d19.236163882025976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795049d6e75a1%3A0xa3bb5dfe6f0afeaa!2sHouse%20Of%20Champions%20Gym!5e0!3m2!1sen!2sin!4v1731141928000!5m2!1sen!2sin"
-                      width="100%"
-                      height="300"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="House of Champions Location"
-                    />
-                  </div>
-                  <div className="flex items-start gap-3 pt-2">
-                    <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <a 
-                      href="https://www.google.com/maps/place/House+Of+Champions+Gym/@19.2361639,73.1543851,17z/data=!3m1!4b1!4m6!3m5!1s0x3be795049d6e75a1:0xa3bb5dfe6f0afeaa!8m2!3d19.2361639!4d73.15696!16s%2Fg%2F11w18ww9mr?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      Basement, Gangagodavari Apt, below Sundar Classes, Katemanivali, Naka, Kalyan, Maharashtra 421306
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </AnimatedSection>
