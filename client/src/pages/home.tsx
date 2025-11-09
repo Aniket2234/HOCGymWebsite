@@ -912,20 +912,20 @@ export default function Home() {
 
               {/* Time Slots - Compact */}
               <div className="grid md:grid-cols-2 gap-4 mb-6">
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-white border-2 border-black">
+                <div className="flex items-center justify-center gap-3 p-4 rounded-lg bg-white border-2 border-black">
                   <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="h-4 w-4 text-white" />
                   </div>
-                  <div>
+                  <div className="text-center">
                     <span className="font-bold text-black text-sm block">Morning Sessions</span>
                     <span className="text-black text-sm">5:45AM • 7AM • 8AM • 11AM</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-white border-2 border-black">
+                <div className="flex items-center justify-center gap-3 p-4 rounded-lg bg-white border-2 border-black">
                   <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="h-4 w-4 text-white" />
                   </div>
-                  <div>
+                  <div className="text-center">
                     <span className="font-bold text-black text-sm block">Evening Sessions</span>
                     <span className="text-black text-sm">6PM • 7:30PM</span>
                   </div>
