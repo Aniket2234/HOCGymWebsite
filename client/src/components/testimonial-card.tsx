@@ -7,7 +7,7 @@ interface TestimonialCardProps {
   role: string;
   rating: number;
   review: string;
-  index?: number;
+  index?: string | number;
 }
 
 export function TestimonialCard({ 

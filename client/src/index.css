@@ -484,19 +484,19 @@
   /* Testimonial marquee animations */
   @keyframes scroll-left-to-right {
     from {
-      transform: translateX(0);
+      transform: translateX(-50%);
     }
     to {
-      transform: translateX(-50%);
+      transform: translateX(0);
     }
   }
 
   @keyframes scroll-right-to-left {
     from {
-      transform: translateX(-50%);
+      transform: translateX(0);
     }
     to {
-      transform: translateX(0);
+      transform: translateX(-50%);
     }
   }
 
