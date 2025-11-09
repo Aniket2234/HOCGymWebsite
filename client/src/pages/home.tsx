@@ -770,17 +770,21 @@ export default function Home() {
               <h3 className="text-2xl md:text-3xl font-bold text-primary text-center mb-8" data-testid="heading-gallery">OUR HOC GALLERY</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[gymPhoto1, gymPhoto2, gymPhoto3, gymPhoto4].map((img, idx) => (
-                  <div 
+                  <motion.div 
                     key={idx}
-                    className="relative rounded-lg overflow-hidden border-2 border-primary aspect-square"
+                    className="relative rounded-lg overflow-hidden border-2 border-primary aspect-square group cursor-pointer"
                     data-testid={`img-gallery-${idx + 1}`}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
                   >
                     <img 
                       src={img} 
                       alt={`Gym photo ${idx + 1}`} 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-110"
                     />
-                  </div>
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
