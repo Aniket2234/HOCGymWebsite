@@ -1221,13 +1221,13 @@ export default function Home() {
               </div>
 
               {/* Right Column - Contact Details */}
-              <Card className="bg-white p-5 md:p-6">
-                <CardContent className="p-0">
+              <Card className="bg-white p-5 md:p-6 flex flex-col h-full">
+                <CardContent className="p-0 flex flex-col flex-1">
                   <h3 className="font-heading text-xl md:text-2xl font-bold mb-4 text-black">
                     Contact Details
                   </h3>
                   
-                  <div className="space-y-3">
+                  <div className="space-y-3 flex flex-col flex-1">
                     {/* Phone Number */}
                     <div className="flex items-start gap-3">
                       <Phone className="h-5 w-5 text-black flex-shrink-0 mt-0.5" />
@@ -1310,8 +1310,8 @@ export default function Home() {
                     </div>
 
                     {/* Google Map */}
-                    <div className="pt-2 flex-1 flex flex-col">
-                      <div className="rounded-lg overflow-hidden border border-gray-200 flex-1 min-h-[300px]">
+                    <div className="flex-1 flex flex-col min-h-0">
+                      <div className="rounded-lg overflow-hidden border border-gray-200 h-full">
                         <iframe
                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.6867458926443!2d73.15438507501688!3d19.236163882025976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795049d6e75a1%3A0xa3bb5dfe6f0afeaa!2sHouse%20Of%20Champions%20Gym!5e0!3m2!1sen!2sin!4v1731141928000!5m2!1sen!2sin"
                           width="100%"
