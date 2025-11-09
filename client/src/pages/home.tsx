@@ -57,9 +57,9 @@ import transform2 from "@assets/transformation_images/transform2.jpg";
 
 const transform3 = "https://i.ytimg.com/vi/4U6GE6Y0pXw/maxresdefault.jpg";
 const transform4 = "https://i.ytimg.com/vi/lDg8GVpBA6c/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBy8EPf-HfmdeHQZsc13S-3b7ck2A";
-import trainer1Image from "@assets/stock_images/indian_female_fitnes_26f1d39f.jpg";
-import trainer2Image from "@assets/generated_images/Zumba_instructor_dancing_portrait_1640c3fe.png";
-import trainer3Image from "@assets/generated_images/Strength_trainer_portrait_with_dumbbells_a7c3e639.png";
+import trainer1Image from "@/assets/trainers/trainer1.png";
+import trainer2Image from "@/assets/trainers/trainer2.png";
+import trainer3Image from "@/assets/trainers/trainer3.png";
 import cardioImage from "@assets/generated_images/Woman_doing_cardio_workout_1ba27fe8.png";
 import functionalImage from "@assets/generated_images/Functional_training_exercise_e1989ece.png";
 import strengthImage from "@assets/generated_images/Strength_training_with_weights_f007c33a.png";
@@ -1100,61 +1100,82 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      {/* Meet Trainers */}
+      {/* Meet Trainers - Redesigned */}
       <AnimatedSection variant="scaleIn">
-        <section className="py-8 md:py-10 lg:py-12 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/5 relative overflow-hidden" id="trainers">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]" />
-        <div className="container px-4 md:px-6 relative max-w-5xl mx-auto">
-          <div className="text-center mb-6 md:mb-8">
-            <div className="inline-block mb-3 md:mb-4">
-              <span className="bg-primary text-black px-5 py-2.5 rounded-full text-xs md:text-sm font-bold border border-primary/20">
-                Expert Team
-              </span>
+        <section className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden py-12 md:py-16 lg:py-20" id="trainers">
+          <div className="w-full px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div className="text-center mb-8 md:mb-10 lg:mb-12">
+              <motion.h2 
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                Meet Your Trainers
+              </motion.h2>
+              <motion.p 
+                className="text-sm md:text-base lg:text-lg text-white mx-auto font-bold px-4 md:whitespace-nowrap"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                Certified professionals dedicated to transforming your fitness journey
+              </motion.p>
             </div>
-            <h2 className="font-heading font-bold mb-2 md:mb-3 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-xl md:text-2xl lg:text-3xl">
-              Meet Your Trainers
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm">Certified professionals dedicated to transforming your fitness journey</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-            {[
-              {
-                name: "Snata Pattnaik",
-                role: "Founder & Managing Director",
-                image: trainer1Image,
-                bio: "10 years of experience inspiring, training, and transforming people across Delhi NCR, Bangalore, Mumbai, and Kolkata."
-              },
-              {
-                name: "Neha Kashyap",
-                role: "Zumba & Dance Trainer",
-                image: trainer2Image,
-                bio: "10+ years Zumba trainer with Shiamak Davar Institute training. Certified yoga and dance fitness trainer."
-              },
-              {
-                name: "Manisha",
-                role: "Strength & Weight Loss Specialist",
-                image: trainer3Image,
-                bio: "Passionate about health and helping people achieve their fitness goals through strength training and weight loss programs."
-              },
-            ].map((trainer, i) => (
-              <Card key={i} className="group p-4 md:p-5 hover-elevate bg-card/50 backdrop-blur border-2 border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary/15">
-                <CardContent className="p-0 space-y-3 text-center">
-                  <div className="relative w-24 h-24 md:w-28 md:h-28 mx-auto">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-full blur-lg group-hover:blur-xl transition-all duration-500" />
-                    <div className="relative w-full h-full rounded-full overflow-hidden border-3 border-primary/20 group-hover:border-primary/40 transition-all duration-500 shadow-lg">
-                      <img src={trainer.image} alt={trainer.name} className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" />
-                    </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
+              {[
+                {
+                  name: "Snata Pattnaik",
+                  role: "Founder & Managing Director",
+                  image: trainer1Image,
+                  bio: "10 years of experience inspiring, training, and transforming people across Delhi NCR, Bangalore, Mumbai, and Kolkata."
+                },
+                {
+                  name: "Neha Kashyap",
+                  role: "Zumba & Dance Trainer",
+                  image: trainer2Image,
+                  bio: "10+ years Zumba trainer with Shiamak Davar Institute training. Certified yoga and dance fitness trainer."
+                },
+                {
+                  name: "Manisha",
+                  role: "Strength & Weight Loss Specialist",
+                  image: trainer3Image,
+                  bio: "Passionate about health and helping people achieve their fitness goals through strength training and weight loss programs."
+                },
+              ].map((trainer, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="flex flex-col"
+                >
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-md border-4 border-primary mb-4 group">
+                    <img 
+                      src={trainer.image} 
+                      alt={trainer.name} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <div>
-                    <h3 className="font-heading text-base md:text-lg font-bold mb-1 group-hover:text-primary transition-colors">{trainer.name}</h3>
-                    <p className="text-xs text-primary font-bold bg-primary/10 px-2.5 py-1 rounded-full inline-block">{trainer.role}</p>
+                  <div className="text-center space-y-2">
+                    <h3 className="font-heading text-xl md:text-2xl font-bold text-white">
+                      {trainer.name}
+                    </h3>
+                    <p className="text-primary text-sm md:text-base font-bold">
+                      {trainer.role}
+                    </p>
+                    <p className="text-white/80 text-sm leading-relaxed">
+                      {trainer.bio}
+                    </p>
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{trainer.bio}</p>
-                </CardContent>
-              </Card>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
         </section>
       </AnimatedSection>
 
