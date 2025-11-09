@@ -439,6 +439,158 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
+      {/* About House of Champions */}
+      <AnimatedSection variant="fadeIn">
+        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="about">
+          <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
+            <div className="text-center mb-10 md:mb-12">
+              <motion.h2 
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                data-testid="heading-about"
+              >
+                About House of Champions
+              </motion.h2>
+              <motion.p 
+                className="text-sm md:text-base lg:text-lg text-white max-w-3xl mx-auto font-semibold leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                data-testid="text-about-subtitle"
+              >
+                Empowering women to achieve their fitness goals through expert-led online training programs
+              </motion.p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-12">
+              {/* Our Story */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-4"
+              >
+                <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-our-story">Our Story</h3>
+                <p className="text-white/90 text-sm md:text-base leading-relaxed" data-testid="text-our-story">
+                  House of Champions was founded with a singular vision: to make professional fitness training accessible to women everywhere. We believe that every woman deserves access to expert guidance, personalized programs, and a supportive community that celebrates their fitness journey.
+                </p>
+                <p className="text-white/90 text-sm md:text-base leading-relaxed">
+                  What started as a passion project has grown into a thriving online fitness community, helping thousands of women transform their lives through dedicated training, proper nutrition, and unwavering support.
+                </p>
+              </motion.div>
+
+              {/* Our Vision */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-4"
+              >
+                <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-our-vision">Our Vision</h3>
+                <p className="text-white/90 text-sm md:text-base leading-relaxed" data-testid="text-our-vision">
+                  We envision a world where fitness is not just a goal, but a lifestyle embraced by women of all ages and backgrounds. Our mission is to break down barriers to fitness training by offering flexible, online programs that fit into your busy schedule.
+                </p>
+                <div className="space-y-3 pt-2">
+                  <div className="flex items-start gap-3">
+                    <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                    </div>
+                    <p className="text-white/90 text-sm md:text-base">Expert-led training programs tailored for women</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                    </div>
+                    <p className="text-white/90 text-sm md:text-base">Flexible online classes that work with your schedule</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                    </div>
+                    <p className="text-white/90 text-sm md:text-base">Supportive community of like-minded champions</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Founder Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-gradient-to-r from-primary/10 to-transparent border-2 border-primary rounded-lg p-6 md:p-8"
+            >
+              <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                <div className="flex-shrink-0">
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-primary/20 flex items-center justify-center border-4 border-primary overflow-hidden">
+                    <img 
+                      src={hocLogo} 
+                      alt="House of Champions Founder" 
+                      className="w-full h-full object-cover"
+                      data-testid="img-founder"
+                    />
+                  </div>
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl md:text-3xl font-bold text-primary mb-2" data-testid="heading-founder">Meet Our Founder</h3>
+                  <p className="text-white/90 text-sm md:text-base leading-relaxed mb-3">
+                    With years of experience in fitness training and a deep passion for empowering women, our founder created House of Champions to share professional fitness expertise with women around the world. Every program is designed with care, backed by expertise, and driven by a commitment to your success.
+                  </p>
+                  <p className="text-white font-semibold text-sm md:text-base">
+                    "Your transformation is our mission. Every rep, every session, every victory - we celebrate it all with you."
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Gym/Community Photos */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mt-12"
+            >
+              <h3 className="text-2xl md:text-3xl font-bold text-primary text-center mb-8" data-testid="heading-community">Our Vibrant Community</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[onlineClassImage, workoutVideo, onlineClassImage, workoutVideo].map((img, idx) => (
+                  <div 
+                    key={idx}
+                    className="relative rounded-lg overflow-hidden border-2 border-primary aspect-square"
+                    data-testid={`img-community-${idx + 1}`}
+                  >
+                    {idx % 2 === 0 ? (
+                      <img 
+                        src={img} 
+                        alt={`Community photo ${idx + 1}`} 
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <video
+                        src={img}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover"
+                      >
+                        Your browser does not support the video tag.
+                      </video>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </AnimatedSection>
 
       {/* Transformation Gallery */}
       <AnimatedSection variant="slideInRight">
