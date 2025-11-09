@@ -98,6 +98,81 @@ const WHATSAPP_NUMBER = "918600126395";
 const PHONE_NUMBER = "+91 8600126395";
 const GOOGLE_REVIEWS_URL = "https://share.google/BOqrkzB7sb4X33Iy0";
 
+interface TestimonialMobileCarouselProps {
+  testimonials: typeof testimonials;
+}
+
+function TestimonialMobileCarousel({ testimonials }: TestimonialMobileCarouselProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  return (
+    <div className="relative">
+      <div className="overflow-hidden">
+        <div 
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="w-full flex-shrink-0 px-2">
+              <Card className="bg-white/5 backdrop-blur-sm border-primary/20 p-6 h-auto">
+                <CardContent className="p-0 space-y-4">
+                  <div className="flex items-start gap-4">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover border-2 border-primary"
+                    />
+                    <div className="flex-1">
+                      <h3 className="font-bold text-white text-lg">
+                        {testimonial.name}
+                      </h3>
+                      <p className="text-primary text-sm font-semibold">
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-white/90 text-sm leading-relaxed">
+                    {testimonial.review}
+                  </p>
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Dots Indicator */}
+      <div className="flex justify-center gap-2 mt-6">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex 
+                ? 'w-8 bg-primary' 
+                : 'w-2 bg-white/30 hover:bg-white/50'
+            }`}
+            aria-label={`Go to testimonial ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // Stats configuration
 const STATS_DATA = [
   { value: 1250, label: "Clients Transformed", suffix: "+" },
@@ -1380,7 +1455,7 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      {/* Customer Testimonials Section - Three Row Continuous Scrolling */}
+      {/* Customer Testimonials Section */}
       <AnimatedSection variant="fadeIn">
         <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" data-testid="section-testimonials">
           <div className="max-w-full">
@@ -1407,42 +1482,50 @@ export default function Home() {
               </motion.p>
             </div>
 
-            {/* Row 1: Left to Right - Displays first 6 testimonials (indices 0-5) */}
-            <div className="relative overflow-hidden mb-6 testimonial-row" data-testid="testimonial-row-1">
-              <div className="flex gap-6 animate-scroll-left">
-                {[...testimonials.slice(0, 6), ...testimonials.slice(0, 6)].map((testimonial, index) => (
-                  <TestimonialCard
-                    key={`row1-${index}`}
-                    {...testimonial}
-                    index={`row1-${index}`}
-                  />
-                ))}
-              </div>
+            {/* Mobile View: Auto-sliding Large Cards */}
+            <div className="block md:hidden px-4">
+              <TestimonialMobileCarousel testimonials={testimonials} />
             </div>
 
-            {/* Row 2: Right to Left - Displays next 7 testimonials (indices 6-12) */}
-            <div className="relative overflow-hidden mb-6 testimonial-row" data-testid="testimonial-row-2">
-              <div className="flex gap-6 animate-scroll-right">
-                {[...testimonials.slice(6, 13), ...testimonials.slice(6, 13)].map((testimonial, index) => (
-                  <TestimonialCard
-                    key={`row2-${index}`}
-                    {...testimonial}
-                    index={`row2-${index}`}
-                  />
-                ))}
+            {/* Desktop View: Three Row Continuous Scrolling */}
+            <div className="hidden md:block">
+              {/* Row 1: Left to Right - Displays first 6 testimonials (indices 0-5) */}
+              <div className="relative overflow-hidden mb-6 testimonial-row" data-testid="testimonial-row-1">
+                <div className="flex gap-6 animate-scroll-left">
+                  {[...testimonials.slice(0, 6), ...testimonials.slice(0, 6)].map((testimonial, index) => (
+                    <TestimonialCard
+                      key={`row1-${index}`}
+                      {...testimonial}
+                      index={`row1-${index}`}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Row 3: Left to Right - Displays last 7 testimonials (indices 13-19) */}
-            <div className="relative overflow-hidden testimonial-row" data-testid="testimonial-row-3">
-              <div className="flex gap-6 animate-scroll-left">
-                {[...testimonials.slice(13, 20), ...testimonials.slice(13, 20)].map((testimonial, index) => (
-                  <TestimonialCard
-                    key={`row3-${index}`}
-                    {...testimonial}
-                    index={`row3-${index}`}
-                  />
-                ))}
+              {/* Row 2: Right to Left - Displays next 7 testimonials (indices 6-12) */}
+              <div className="relative overflow-hidden mb-6 testimonial-row" data-testid="testimonial-row-2">
+                <div className="flex gap-6 animate-scroll-right">
+                  {[...testimonials.slice(6, 13), ...testimonials.slice(6, 13)].map((testimonial, index) => (
+                    <TestimonialCard
+                      key={`row2-${index}`}
+                      {...testimonial}
+                      index={`row2-${index}`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Row 3: Left to Right - Displays last 7 testimonials (indices 13-19) */}
+              <div className="relative overflow-hidden testimonial-row" data-testid="testimonial-row-3">
+                <div className="flex gap-6 animate-scroll-left">
+                  {[...testimonials.slice(13, 20), ...testimonials.slice(13, 20)].map((testimonial, index) => (
+                    <TestimonialCard
+                      key={`row3-${index}`}
+                      {...testimonial}
+                      index={`row3-${index}`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
