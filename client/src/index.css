@@ -480,4 +480,45 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* Testimonial marquee animations */
+  @keyframes scroll-left-to-right {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scroll-right-to-left {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left-to-right 40s linear infinite;
+  }
+
+  .animate-scroll-right {
+    animation: scroll-right-to-left 45s linear infinite;
+  }
+
+  /* Pause animations on hover */
+  .testimonial-row:hover .animate-scroll-left,
+  .testimonial-row:hover .animate-scroll-right {
+    animation-play-state: paused;
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-scroll-left,
+    .animate-scroll-right {
+      animation: none !important;
+    }
+  }
 }
