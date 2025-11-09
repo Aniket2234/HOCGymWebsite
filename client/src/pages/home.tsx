@@ -590,7 +590,7 @@ export default function Home() {
 
       {/* Exclusively For Women - Elegant Black Design */}
       <AnimatedSection variant="fadeIn">
-        <section className="py-8 md:py-10 bg-white relative overflow-hidden" id="program">
+        <section className="py-8 md:py-10 bg-white relative overflow-hidden">
           <div className="w-full px-3 md:px-5 lg:px-6 relative max-w-6xl mx-auto">
             <div className="text-center mb-6">
               <div className="inline-block mb-3">
@@ -699,7 +699,7 @@ export default function Home() {
 
       {/* Training Programs - Redesigned */}
       <AnimatedSection variant="slideUp">
-        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" data-testid="section-training-programs">
+        <section id="program" className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" data-testid="section-training-programs">
           <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
               <div className="inline-block mb-4 md:mb-5">

@@ -53,6 +53,19 @@ The contact form sends emails using Gmail SMTP via Nodemailer. Required environm
   - Updated build scripts for Netlify
   - Added _redirects file for SPA routing
   - Comprehensive deployment guide in NETLIFY_DEPLOY.md
+- **Training Programs Section Redesign** (November 2025):
+  - Changed section background to solid black matching website theme
+  - Updated to white cards with green headers and black body text
+  - Replaced 6 training programs with new content:
+    1. Cardio Training - Heart health and endurance
+    2. Strength Training - Muscle building with weights
+    3. Flexibility & Mobility Training - Joint movement and injury prevention
+    4. Core Training - Abs, obliques, and lower back strengthening
+    5. Functional Training - Daily life movement activities
+    6. Balance & Stability Training - Coordination and posture
+  - Added motion animations for card entry
+  - Faster testimonial animations (20s/25s instead of 30s/35s)
+  - Split testimonials into 3 different review groups per row
 
 ## Deployment
 This project is configured for Netlify deployment. See **NETLIFY_DEPLOY.md** for complete deployment instructions.
