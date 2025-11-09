@@ -455,7 +455,7 @@ export default function Home() {
             className="absolute inset-0 w-full h-full object-cover"
           />
           {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
         </div>
         
         {/* Content */}
@@ -502,19 +502,18 @@ export default function Home() {
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                   <Button 
                     onClick={openWhatsApp} 
-                    size="lg"
-                    className="rounded-full px-8 py-6 md:px-10 md:py-7 transition-all bg-primary hover:bg-primary/90 font-bold text-base md:text-lg text-black shadow-2xl shadow-primary/30"
+                    size="default"
+                    className="rounded-full px-8 transition-all bg-primary hover:bg-primary/90 font-semibold text-sm md:text-base text-white shadow-2xl shadow-primary/30"
                     data-testid="button-book-consultation-hero"
                   >
-                    <MessageCircle className="h-5 w-5 md:h-6 md:w-6 mr-2 text-black" />
                     Start Your Journey
                   </Button>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                   <Button 
                     variant="outline" 
-                    size="lg"
-                    className="rounded-full px-8 py-6 md:px-10 md:py-7 border-2 border-white/80 bg-white/10 hover:bg-white/20 backdrop-blur-md hover:border-white transition-all font-bold text-base md:text-lg text-white shadow-2xl"
+                    size="default"
+                    className="rounded-full px-8 border-2 border-white/80 bg-white/10 hover:bg-white/20 backdrop-blur-md hover:border-white transition-all font-semibold text-sm md:text-base text-white shadow-2xl"
                     onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
                     data-testid="button-view-packages"
                   >
@@ -556,22 +555,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Notice Banner */}
-      <AnimatedSection variant="slideInLeft">
-        <section className="bg-primary/5 border-y border-primary/20 py-5">
-          <div className="container px-4 md:px-6">
-            <div className="flex items-center justify-center gap-3 max-w-4xl mx-auto">
-              <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Info className="h-4 w-4 text-primary" />
-              </div>
-              <p className="text-center text-sm md:text-base text-primary font-semibold">
-                <strong>Important:</strong> We only offer online classes. No offline batches available.
-              </p>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
 
       {/* About House of Champions */}
       <AnimatedSection variant="fadeIn">
