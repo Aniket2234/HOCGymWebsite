@@ -1102,7 +1102,7 @@ export default function Home() {
 
       {/* Meet Trainers - Redesigned */}
       <AnimatedSection variant="scaleIn">
-        <section className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden py-12 md:py-16 lg:py-20" id="trainers">
+        <section className="bg-black flex items-center justify-center relative overflow-hidden py-8 md:py-10 lg:py-12" id="trainers">
           <div className="w-full px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
             <div className="text-center mb-8 md:mb-10 lg:mb-12">
               <motion.h2 
@@ -1168,7 +1168,7 @@ export default function Home() {
                     <p className="text-primary text-sm md:text-base font-bold">
                       {trainer.role}
                     </p>
-                    <p className="text-white/80 text-sm leading-relaxed">
+                    <p className="text-white text-sm leading-relaxed line-clamp-2">
                       {trainer.bio}
                     </p>
                   </div>
