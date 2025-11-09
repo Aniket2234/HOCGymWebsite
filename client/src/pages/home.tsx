@@ -7,6 +7,7 @@ import { contactFormSchema, type ContactFormData } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
@@ -433,120 +434,6 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      {/* Contact Form Section */}
-      <AnimatedSection variant="scaleIn">
-        <section className="py-10 md:py-12 lg:py-16 bg-gradient-to-br from-primary/5 via-background to-accent/20 relative overflow-hidden" id="contact">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.08),transparent_70%)]" />
-        <div className="container px-4 md:px-6 relative">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-6 md:mb-8">
-              <div className="inline-block mb-3 md:mb-4">
-                <span className="bg-primary text-black px-5 py-2.5 rounded-full text-xs md:text-sm font-bold border border-primary/20">
-                  Get Started Today
-                </span>
-              </div>
-              <h2 className="font-heading font-bold mb-3 md:mb-4 tracking-tight text-xl md:text-2xl lg:text-3xl">
-                Start Your Transformation
-              </h2>
-              <p className="text-foreground/60 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
-                Fill out the form and we'll contact you within 24 hours to discuss your fitness goals
-              </p>
-            </div>
-            <Card className="p-4 md:p-6 lg:p-8 shadow-xl shadow-primary/10 border-2 border-primary/20 backdrop-blur hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 max-w-5xl mx-auto">
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-sm font-semibold">Name *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Enter your full name" {...field} data-testid="input-name" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-sm font-semibold">Email *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="your.email@example.com" type="email" {...field} data-testid="input-email" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-                    <FormField
-                      control={form.control}
-                      name="contactNumber"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-sm font-semibold">Contact Number *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="10-digit mobile number" {...field} data-testid="input-contact" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="purpose"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-sm font-semibold">Purpose of Joining *</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger data-testid="select-purpose">
-                                <SelectValue placeholder="Select your fitness goal" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="weight-loss">Overall Weight Loss</SelectItem>
-                              <SelectItem value="body-toning">For Body Toning</SelectItem>
-                              <SelectItem value="postpartum">Reducing Postpartum Belly Fat</SelectItem>
-                              <SelectItem value="strength-building">Build Strength/Endurance/Flexibility</SelectItem>
-                              <SelectItem value="general-fitness">General Fitness</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-                  <div className="pt-2">
-                    <Button 
-                      type="submit" 
-                      size="default" 
-                      className="w-full rounded-full text-sm py-4" 
-                      disabled={contactMutation.isPending}
-                      data-testid="button-submit-form"
-                    >
-                      {contactMutation.isPending ? (
-                        <>
-                          <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                          Sending...
-                        </>
-                      ) : (
-                        "Submit"
-                      )}
-                    </Button>
-                  </div>
-                </form>
-              </Form>
-            </Card>
-          </div>
-        </div>
-        </section>
-      </AnimatedSection>
 
       {/* Transformation Gallery */}
       <AnimatedSection variant="slideInRight">
@@ -1174,6 +1061,172 @@ export default function Home() {
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Contact Form Section - Two Column Layout */}
+      <AnimatedSection variant="fadeIn">
+        <section className="py-12 md:py-16 lg:py-20 bg-background" id="contact">
+          <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+              {/* Left Column - Contact Form */}
+              <div className="space-y-6">
+                <div>
+                  <h2 className="font-heading text-2xl md:text-3xl font-bold mb-2">
+                    Send Us a Message
+                  </h2>
+                </div>
+                
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-medium">Name</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Your name" {...field} data-testid="input-name" className="bg-background" />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-sm font-medium">Email</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Your email" type="email" {...field} data-testid="input-email" className="bg-background" />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                    
+                    <FormField
+                      control={form.control}
+                      name="contactNumber"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-medium">Phone Number</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Your phone number" {...field} data-testid="input-contact" className="bg-background" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="purpose"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-medium">Service Needed</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger data-testid="select-purpose" className="bg-background">
+                                <SelectValue placeholder="Select a service" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="weight-loss">Overall Weight Loss</SelectItem>
+                              <SelectItem value="body-toning">For Body Toning</SelectItem>
+                              <SelectItem value="postpartum">Reducing Postpartum Belly Fat</SelectItem>
+                              <SelectItem value="strength-building">Build Strength/Endurance/Flexibility</SelectItem>
+                              <SelectItem value="general-fitness">General Fitness</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="w-full md:w-auto px-8 bg-yellow-500 hover:bg-yellow-600 text-black font-bold" 
+                      disabled={contactMutation.isPending}
+                      data-testid="button-submit-form"
+                    >
+                      {contactMutation.isPending ? (
+                        <>
+                          <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        "Send Message"
+                      )}
+                    </Button>
+                  </form>
+                </Form>
+              </div>
+
+              {/* Right Column - Business Hours & Location */}
+              <div className="space-y-8">
+                {/* Business Hours */}
+                <div className="space-y-4">
+                  <h3 className="font-heading text-xl md:text-2xl font-bold">Business Hours</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <Clock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-semibold">Monday - Friday</p>
+                        <p className="text-sm text-muted-foreground">8:00 AM - 6:00 PM</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Clock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-semibold">Saturday</p>
+                        <p className="text-sm text-muted-foreground">9:00 AM - 4:00 PM</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Clock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-semibold">Sunday</p>
+                        <p className="text-sm text-muted-foreground">Emergency Services Only</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Location */}
+                <div className="space-y-4">
+                  <h3 className="font-heading text-xl md:text-2xl font-bold">Our Location</h3>
+                  <div className="rounded-lg overflow-hidden border">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.6867458926443!2d73.15438507501688!3d19.236163882025976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795049d6e75a1%3A0xa3bb5dfe6f0afeaa!2sHouse%20Of%20Champions%20Gym!5e0!3m2!1sen!2sin!4v1731141928000!5m2!1sen!2sin"
+                      width="100%"
+                      height="300"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="House of Champions Location"
+                    />
+                  </div>
+                  <div className="flex items-start gap-3 pt-2">
+                    <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <a 
+                      href="https://www.google.com/maps/place/House+Of+Champions+Gym/@19.2361639,73.1543851,17z/data=!3m1!4b1!4m6!3m5!1s0x3be795049d6e75a1:0xa3bb5dfe6f0afeaa!8m2!3d19.2361639!4d73.15696!16s%2Fg%2F11w18ww9mr?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      Basement, Gangagodavari Apt, below Sundar Classes, Katemanivali, Naka, Kalyan, Maharashtra 421306
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
