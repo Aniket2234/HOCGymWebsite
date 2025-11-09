@@ -47,7 +47,7 @@ import {
   Video,
   Clock
 } from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
+import { SiWhatsapp, SiFacebook, SiInstagram, SiYoutube } from "react-icons/si";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import transformationImage from "@assets/stock_images/before_and_after_wei_c6f6006f.jpg";
 import workoutVideo from "@assets/5319089-uhd_3840_2160_25fps_1762541494599.mp4";
@@ -1279,52 +1279,43 @@ export default function Home() {
                         <p className="font-semibold text-black mb-2 text-sm">Follow Us</p>
                         <div className="flex flex-wrap gap-2">
                           <a 
-                            href="https://www.facebook.com/house_of_champions_studio/" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="h-9 w-9 rounded-full bg-black/5 flex items-center justify-center hover-elevate transition-all"
-                            data-testid="link-facebook-contact"
-                          >
-                            <Facebook className="h-4 w-4 text-black" />
-                          </a>
-                          <a 
                             href="https://www.instagram.com/house_of_champions_studio/" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="h-9 w-9 rounded-full bg-black/5 flex items-center justify-center hover-elevate transition-all"
+                            className="h-9 w-9 rounded-full flex items-center justify-center hover-elevate transition-all bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500"
                             data-testid="link-instagram-contact"
                           >
-                            <Instagram className="h-4 w-4 text-black" />
+                            <SiInstagram className="h-4 w-4 text-white" />
+                          </a>
+                          <a 
+                            href="https://www.facebook.com/house_of_champions_studio/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="h-9 w-9 rounded-full flex items-center justify-center hover-elevate transition-all bg-[#1877F2]"
+                            data-testid="link-facebook-contact"
+                          >
+                            <SiFacebook className="h-4 w-4 text-white" />
                           </a>
                           <a 
                             href="https://www.youtube.com/@houseofchampions8926" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="h-9 w-9 rounded-full bg-black/5 flex items-center justify-center hover-elevate transition-all"
+                            className="h-9 w-9 rounded-full flex items-center justify-center hover-elevate transition-all bg-[#FF0000]"
                             data-testid="link-youtube-contact"
                           >
-                            <Youtube className="h-4 w-4 text-black" />
-                          </a>
-                          <a 
-                            href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="h-9 w-9 rounded-full bg-black/5 flex items-center justify-center hover-elevate transition-all"
-                            data-testid="link-whatsapp-contact"
-                          >
-                            <MessageCircle className="h-4 w-4 text-black" />
+                            <SiYoutube className="h-5 w-5 text-white" />
                           </a>
                         </div>
                       </div>
                     </div>
 
                     {/* Google Map */}
-                    <div className="pt-2">
-                      <div className="rounded-lg overflow-hidden border border-gray-200">
+                    <div className="pt-2 flex-1 flex flex-col">
+                      <div className="rounded-lg overflow-hidden border border-gray-200 flex-1 min-h-[300px]">
                         <iframe
                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.6867458926443!2d73.15438507501688!3d19.236163882025976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795049d6e75a1%3A0xa3bb5dfe6f0afeaa!2sHouse%20Of%20Champions%20Gym!5e0!3m2!1sen!2sin!4v1731141928000!5m2!1sen!2sin"
                           width="100%"
-                          height="200"
+                          height="100%"
                           style={{ border: 0 }}
                           allowFullScreen
                           loading="lazy"
