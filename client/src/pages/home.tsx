@@ -858,17 +858,26 @@ export default function Home() {
         <section className="h-screen bg-black flex items-center justify-center relative overflow-hidden py-6" id="pricing">
         <div className="w-full px-3 md:px-4 lg:px-6 max-w-7xl mx-auto">
           <div className="text-center mb-8 md:mb-10">
-            <motion.p 
-              className="text-base md:text-lg lg:text-xl text-primary max-w-3xl mx-auto font-bold"
+            <motion.h2 
+              className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
+              Transform Your Life Today
+            </motion.h2>
+            <motion.p 
+              className="text-base md:text-lg lg:text-xl text-white max-w-3xl mx-auto font-bold"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
               Choose the perfect plan that fits your lifestyle and commit to your wellness journey
             </motion.p>
           </div>
-          <div className="flex items-center justify-center gap-4 md:gap-6 perspective-1000">
+          <div className="flex items-center justify-center gap-6 md:gap-8 lg:gap-10 perspective-1000">
             {[
               {
                 name: "Starter",
