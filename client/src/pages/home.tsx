@@ -782,8 +782,6 @@ export default function Home() {
                       alt={`Gym photo ${idx + 1}`} 
                       className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-110"
                     />
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </motion.div>
                 ))}
               </div>
