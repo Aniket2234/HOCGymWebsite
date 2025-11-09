@@ -1720,8 +1720,8 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-card border-t py-12">
-        <div className="container px-6 md:px-8 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="w-full px-8 md:px-12 lg:px-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 xl:gap-16">
             {/* Company Info */}
             <div className="space-y-4 lg:col-span-1">
               <div className="flex items-center gap-3">
