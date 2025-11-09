@@ -9,163 +9,163 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Priya Sharma",
-    initials: "PS",
-    role: "Working Professional",
+    name: "Ananya Deshmukh",
+    initials: "AD",
+    role: "Software Developer",
     rating: 5,
-    review: "Lost 12 kg in 4 months with HOC's online program! The personalized workout plans and constant support from trainers kept me motivated. Best decision I made for my health!",
-    image: "https://i.pravatar.cc/150?img=1"
+    review: "Dropped 2 dress sizes in 3 months! The trainers customized everything for my sedentary lifestyle. My energy levels have skyrocketed and I actually enjoy working out now!",
+    image: "https://i.pravatar.cc/150?img=47"
   },
   {
-    name: "Rahul Verma",
-    initials: "RV",
-    role: "Businessman",
-    rating: 5,
-    review: "Gained muscle mass and improved overall fitness with HOC's strength training program. The trainers are knowledgeable and the online format saves me commute time!",
-    image: "https://i.pravatar.cc/150?img=12"
-  },
-  {
-    name: "Anjali Mehta",
-    initials: "AM",
-    role: "New Mom",
-    rating: 5,
-    review: "The postpartum program helped me regain strength. Training from home was perfect with my baby! The trainers understood my needs completely.",
-    image: "https://i.pravatar.cc/150?img=5"
-  },
-  {
-    name: "Vikram Kumar",
-    initials: "VK",
-    role: "Marketing Manager",
-    rating: 5,
-    review: "Amazing transformation in just 3 months! The trainers are supportive and the workout variety keeps me engaged. Highly recommend!",
-    image: "https://i.pravatar.cc/150?img=15"
-  },
-  {
-    name: "Neha Kulkarni",
-    initials: "NK",
-    role: "Teacher",
-    rating: 5,
-    review: "Yoga and meditation sessions have reduced my stress significantly. The flexibility to train anytime fits perfectly with my schedule. Life-changing experience!",
-    image: "https://i.pravatar.cc/150?img=9"
-  },
-  {
-    name: "Arjun Singh",
-    initials: "AS",
-    role: "IT Professional",
-    rating: 5,
-    review: "Lost weight and gained confidence. The online format is convenient and the results speak for themselves! Down 15 kg and feeling amazing.",
-    image: "https://i.pravatar.cc/150?img=14"
-  },
-  {
-    name: "Sneha Desai",
-    initials: "SD",
-    role: "Entrepreneur",
-    rating: 5,
-    review: "The trainers' expertise is exceptional. I've gained strength, flexibility, and mental clarity. This program has transformed my approach to fitness!",
-    image: "https://i.pravatar.cc/150?img=10"
-  },
-  {
-    name: "Karan Patel",
-    initials: "KP",
-    role: "Doctor",
-    rating: 5,
-    review: "As a healthcare professional, I appreciate the scientific approach to fitness. The personalized nutrition guidance combined with workouts is perfect!",
-    image: "https://i.pravatar.cc/150?img=33"
-  },
-  {
-    name: "Riya Kapoor",
+    name: "Rohan Krishnan",
     initials: "RK",
-    role: "Software Engineer",
+    role: "Investment Banker",
     rating: 5,
-    review: "The flexibility of online classes fits perfectly with my work schedule. Strength training improved my posture and energy levels dramatically!",
-    image: "https://i.pravatar.cc/150?img=16"
+    review: "Built the physique I always wanted while working 60-hour weeks. The convenience of training from anywhere is unmatched. Worth every rupee!",
+    image: "https://i.pravatar.cc/150?img=13"
   },
   {
-    name: "Deepak Joshi",
-    initials: "DJ",
-    role: "Architect",
+    name: "Divya Menon",
+    initials: "DM",
+    role: "Yoga Instructor",
     rating: 5,
-    review: "HOC's program helped me build endurance and lose stubborn weight. The trainers keep sessions engaging and challenging. Best investment in myself!",
-    image: "https://i.pravatar.cc/150?img=52"
+    review: "Even as a yoga teacher, I learned so much about strength training and nutrition. The holistic approach transformed not just my body but my entire wellness practice!",
+    image: "https://i.pravatar.cc/150?img=23"
   },
   {
-    name: "Meera Nair",
-    initials: "MN",
-    role: "Lawyer",
+    name: "Arjun Malhotra",
+    initials: "AM",
+    role: "Startup Founder",
     rating: 5,
-    review: "Despite my hectic schedule, I've never missed a session. The accountability and support keep me committed. Lost 10 kg in 3 months!",
-    image: "https://i.pravatar.cc/150?img=20"
+    review: "No more excuses about being too busy. The trainers designed quick, effective workouts that fit my chaotic schedule. Lost 18 kg and gained mental clarity!",
+    image: "https://i.pravatar.cc/150?img=58"
   },
   {
-    name: "Rohan Shah",
+    name: "Shreya Banerjee",
+    initials: "SB",
+    role: "Medical Student",
+    rating: 5,
+    review: "Studying 12 hours a day left no time for gym. HOC's online program saved me. I'm fitter now than I was in high school, all from my hostel room!",
+    image: "https://i.pravatar.cc/150?img=36"
+  },
+  {
+    name: "Karthik Reddy",
+    initials: "KR",
+    role: "Pilot",
+    rating: 5,
+    review: "My irregular flying schedule made traditional gyms impossible. These trainers work around my time zones and layovers. Finally consistent results!",
+    image: "https://i.pravatar.cc/150?img=64"
+  },
+  {
+    name: "Nisha Patel",
+    initials: "NP",
+    role: "Fashion Designer",
+    rating: 5,
+    review: "Sitting at the sewing machine all day ruined my posture. HOC's corrective exercises and strength training changed everything. I feel 10 years younger!",
+    image: "https://i.pravatar.cc/150?img=41"
+  },
+  {
+    name: "Vikram Choudhary",
+    initials: "VC",
+    role: "Police Inspector",
+    rating: 5,
+    review: "Needed to pass my physical fitness test and exceed it. The trainers pushed me harder than I thought possible. Passed with flying colors at age 45!",
+    image: "https://i.pravatar.cc/150?img=62"
+  },
+  {
+    name: "Ritika Sharma",
     initials: "RS",
-    role: "Finance Manager",
+    role: "News Anchor",
     rating: 5,
-    review: "The combination of cardio, strength training, and diet guidance is exactly what I needed. Visible results in just 6 weeks!",
-    image: "https://i.pravatar.cc/150?img=59"
+    review: "Camera adds 10 pounds they say. Not anymore! Lost 14 kg and look better on screen than ever. The confidence boost is priceless!",
+    image: "https://i.pravatar.cc/150?img=28"
   },
   {
-    name: "Pooja Iyer",
-    initials: "PI",
-    role: "HR Manager",
-    rating: 5,
-    review: "Love the personalized attention even in online sessions. My fitness journey has been smooth and enjoyable. Couldn't ask for better trainers!",
-    image: "https://i.pravatar.cc/150?img=26"
-  },
-  {
-    name: "Siddharth Reddy",
-    initials: "SR",
-    role: "Sales Executive",
-    rating: 5,
-    review: "The high-intensity workouts pushed me beyond my limits. I'm stronger, faster, and more confident than ever. Thank you HOC team!",
-    image: "https://i.pravatar.cc/150?img=68"
-  },
-  {
-    name: "Kavya Menon",
-    initials: "KM",
-    role: "Content Creator",
-    rating: 5,
-    review: "As someone who works from home, HOC kept me active and healthy. The trainers are motivating and the results are incredible!",
-    image: "https://i.pravatar.cc/150?img=31"
-  },
-  {
-    name: "Aditya Gupta",
-    initials: "AG",
-    role: "College Student",
-    rating: 5,
-    review: "Started my fitness journey during college and couldn't be happier! The flexible timings work around my class schedule perfectly.",
-    image: "https://i.pravatar.cc/150?img=51"
-  },
-  {
-    name: "Ishita Rao",
-    initials: "IR",
-    role: "Dentist",
-    rating: 5,
-    review: "Finally found a program that fits my irregular work hours. The trainers are patient and the progress is amazing. Highly satisfied!",
-    image: "https://i.pravatar.cc/150?img=45"
-  },
-  {
-    name: "Manish Trivedi",
-    initials: "MT",
-    role: "Chef",
-    rating: 5,
-    review: "Being a chef, I know about nutrition but needed help with workouts. HOC's balanced approach is exactly what I was looking for!",
-    image: "https://i.pravatar.cc/150?img=56"
-  },
-  {
-    name: "Simran Kaur",
+    name: "Sanjay Kumar",
     initials: "SK",
-    role: "Photographer",
+    role: "Restaurant Owner",
     rating: 5,
-    review: "The flexibility to workout between photoshoots has been a game changer. Lost 8 kg and feeling more energetic than ever!",
-    image: "https://i.pravatar.cc/150?img=38"
+    review: "Surrounded by food all day made weight loss impossible. HOC taught me portion control and gave me workouts I could do in my office. Down 22 kg!",
+    image: "https://i.pravatar.cc/150?img=54"
   },
   {
-    name: "Varun Pillai",
-    initials: "VP",
-    role: "Bank Manager",
+    name: "Priyanka Joshi",
+    initials: "PJ",
+    role: "Classical Dancer",
     rating: 5,
-    review: "Professional trainers who understand your goals. The online format saved me hours of commute time. Results are outstanding!",
-    image: "https://i.pravatar.cc/150?img=70"
+    review: "Needed strength without bulk for performances. The trainers understood my unique needs perfectly. My stamina and flexibility have doubled!",
+    image: "https://i.pravatar.cc/150?img=32"
+  },
+  {
+    name: "Aakash Gupta",
+    initials: "AG",
+    role: "Game Developer",
+    rating: 5,
+    review: "Gaming lifestyle destroyed my health. HOC's gamified approach to fitness got me hooked. Lost 25 kg while still crushing it in my job!",
+    image: "https://i.pravatar.cc/150?img=67"
+  },
+  {
+    name: "Tanvi Shah",
+    initials: "TS",
+    role: "Wedding Planner",
+    rating: 5,
+    review: "Wedding season stress eating was real. The trainers gave me stress-busting workouts and nutrition plans that work with my crazy schedule. Lost 11 kg!",
+    image: "https://i.pravatar.cc/150?img=44"
+  },
+  {
+    name: "Rahul Iyer",
+    initials: "RI",
+    role: "Cricket Coach",
+    rating: 5,
+    review: "Retired from playing but let myself go. HOC got me back in athlete shape. My students are inspired seeing their coach transform!",
+    image: "https://i.pravatar.cc/150?img=60"
+  },
+  {
+    name: "Megha Kapoor",
+    initials: "MK",
+    role: "Real Estate Agent",
+    rating: 5,
+    review: "Constant client meetings and irregular eating ruined my health. The portable workout plans work anywhere - even in show homes! 16 kg gone!",
+    image: "https://i.pravatar.cc/150?img=25"
+  },
+  {
+    name: "Aditya Verma",
+    initials: "AV",
+    role: "Freelance Writer",
+    rating: 5,
+    review: "Work-from-home weight gain was brutal. HOC structured my days and got me moving. Writing career going strong and I'm in the best shape of my life!",
+    image: "https://i.pravatar.cc/150?img=57"
+  },
+  {
+    name: "Kavita Singh",
+    initials: "KS",
+    role: "School Principal",
+    rating: 5,
+    review: "Managing 500 students left no time for myself. Early morning sessions before school changed my life. More energy to inspire my students now!",
+    image: "https://i.pravatar.cc/150?img=48"
+  },
+  {
+    name: "Nikhil Desai",
+    initials: "ND",
+    role: "Sound Engineer",
+    rating: 5,
+    review: "Studio hours are brutal on the body. HOC's mobility and strength program eliminated my chronic back pain. Feeling 20 years younger!",
+    image: "https://i.pravatar.cc/150?img=63"
+  },
+  {
+    name: "Sneha Kulkarni",
+    initials: "SK",
+    role: "Veterinary Doctor",
+    rating: 5,
+    review: "Long surgeries and emergency calls made fitness seem impossible. The flexible schedule and quick workouts fit perfectly. Lost 13 kg and feel amazing!",
+    image: "https://i.pravatar.cc/150?img=39"
+  },
+  {
+    name: "Harsh Agarwal",
+    initials: "HA",
+    role: "Civil Engineer",
+    rating: 5,
+    review: "Site visits and desk work combo destroyed my fitness. HOC gave me construction-proof workout plans that work anywhere. Best shape in 15 years!",
+    image: "https://i.pravatar.cc/150?img=69"
   }
 ];
