@@ -259,7 +259,7 @@ export default function Home() {
       {/* Navigation Header */}
       <header className="fixed top-0 z-50 w-full border-b border-primary/10 bg-background/80 backdrop-blur-xl shadow-lg shadow-black/5">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5 pointer-events-none" />
-        <div className="container flex h-20 items-center justify-between gap-4 px-4 md:px-6 relative">
+        <div className="w-full max-w-[1920px] mx-auto flex h-20 items-center justify-between gap-4 px-4 md:px-8 lg:px-12 xl:px-16 relative">
           <motion.div 
             className="flex items-center flex-shrink-0"
             initial={{ opacity: 0, x: -20 }}
@@ -353,7 +353,7 @@ export default function Home() {
           
           {/* Desktop Navigation Menu */}
           <motion.nav 
-            className="hidden lg:flex items-center gap-3"
+            className="hidden lg:flex items-center gap-2 xl:gap-3 flex-1 justify-center"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -520,36 +520,6 @@ export default function Home() {
                     View Packages
                   </Button>
                 </motion.div>
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center pt-4"
-                variants={fadeInUp}
-              >
-                <motion.a 
-                  href={GOOGLE_REVIEWS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex flex-wrap items-center gap-4 md:gap-6 bg-black/60 hover:bg-black/70 backdrop-blur-lg px-6 py-4 rounded-2xl transition-all duration-300 cursor-pointer group border border-white/20 hover:border-primary/50 shadow-2xl"
-                  whileHover={{ scale: 1.03, y: -2 }}
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="flex group-hover:scale-110 transition-transform duration-300">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-primary text-primary" />
-                      ))}
-                    </div>
-                    <span className="text-base font-bold text-white">4.8/5.0</span>
-                  </div>
-                  <div className="hidden md:block h-5 w-px bg-white/30" />
-                  <div className="text-base font-bold text-white whitespace-nowrap">
-                    <span className="text-primary font-bold">1000+</span> Success Stories
-                  </div>
-                  <div className="hidden md:flex text-sm text-white/80 group-hover:text-white transition-colors items-center gap-1">
-                    <span>View Reviews</span>
-                    <TrendingUp className="h-4 w-4" />
-                  </div>
-                </motion.a>
               </motion.div>
             </motion.div>
           </div>
