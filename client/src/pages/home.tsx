@@ -225,11 +225,18 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <img 
-              src={hocLogo} 
-              alt="HOC Fitness" 
-              className="h-20 w-auto transition-transform duration-300 hover:scale-105" 
-            />
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="focus:outline-none"
+              aria-label="Scroll to top"
+              data-testid="button-logo-home"
+            >
+              <img 
+                src={hocLogo} 
+                alt="HOC Fitness" 
+                className="h-20 w-auto transition-transform duration-300 hover:scale-105 cursor-pointer" 
+              />
+            </button>
           </motion.div>
           
           {/* Mobile Menu */}
@@ -245,12 +252,6 @@ export default function Home() {
                 <span className="sr-only">Close</span>
               </SheetClose>
               <nav className="flex flex-col gap-6 mt-8">
-                <button 
-                  onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setMobileMenuOpen(false); }}
-                  className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
-                >
-                  HOME
-                </button>
                 <button 
                   onClick={() => { document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}
                   className="text-lg font-medium text-white hover:text-primary transition-colors text-left"
@@ -316,13 +317,6 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <button 
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="relative px-3 py-3 text-xs font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate whitespace-nowrap"
-            >
-              <span className="relative z-10">HOME</span>
-              <div className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </button>
             <button 
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               className="relative px-3 py-3 text-xs font-bold text-foreground hover:text-primary transition-all duration-300 group rounded-lg hover-elevate whitespace-nowrap"
