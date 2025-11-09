@@ -702,13 +702,8 @@ export default function Home() {
         <section id="program" className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" data-testid="section-training-programs">
           <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
             <div className="text-center mb-10 md:mb-12 lg:mb-16">
-              <div className="inline-block mb-4 md:mb-5">
-                <span className="bg-primary text-black px-6 py-3 rounded-full text-xs md:text-sm font-bold border border-primary/20" data-testid="badge-diverse-workouts">
-                  Diverse Workouts
-                </span>
-              </div>
               <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-white"
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -718,7 +713,7 @@ export default function Home() {
                 Our Training Programs
               </motion.h2>
               <motion.p 
-                className="text-sm md:text-base lg:text-lg text-white/80 max-w-2xl mx-auto font-medium"
+                className="text-sm md:text-base lg:text-lg text-white max-w-2xl mx-auto font-semibold"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -774,8 +769,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="flex"
                 >
-                  <Card className="group overflow-hidden hover-elevate bg-white shadow-lg hover:shadow-2xl transition-all duration-500" data-testid={item.testId}>
+                  <Card className="group overflow-hidden hover-elevate bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-primary flex flex-col w-full" data-testid={item.testId}>
                     <div className="relative h-56 md:h-64 w-full overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
                       <img 
@@ -785,11 +781,11 @@ export default function Home() {
                         data-testid={`img-${item.testId}`}
                       />
                     </div>
-                    <CardContent className="p-5 md:p-6 space-y-2">
-                      <h3 className="font-heading text-lg md:text-xl lg:text-2xl font-bold text-primary" data-testid={`heading-${item.testId}`}>
+                    <CardContent className="p-5 md:p-6 space-y-2 flex-1 flex flex-col">
+                      <h3 className="font-heading text-lg md:text-xl lg:text-2xl font-bold text-black" data-testid={`heading-${item.testId}`}>
                         {item.title}
                       </h3>
-                      <p className="text-black/80 leading-relaxed text-sm md:text-base" data-testid={`text-${item.testId}`}>
+                      <p className="text-black leading-relaxed text-sm md:text-base flex-1" data-testid={`text-${item.testId}`}>
                         {item.desc}
                       </p>
                     </CardContent>
