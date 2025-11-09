@@ -281,6 +281,24 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [contactMenuOpen, setContactMenuOpen] = useState(false);
   const shouldReduceMotion = useReducedMotion();
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+
+  // Hero quotes that will auto-slide
+  const heroQuotes = [
+    { line1: "Your Body Is Your", line2: "Greatest Project" },
+    { line1: "Transform Your Life", line2: "One Rep At A Time" },
+    { line1: "Strength Starts", line2: "In Your Mind" },
+    { line1: "Be Your Own", line2: "Champion" }
+  ];
+
+  // Auto-slide quotes every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentQuoteIndex((prev) => (prev + 1) % heroQuotes.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -542,19 +560,29 @@ export default function Home() {
               animate="visible"
               variants={staggerContainer}
             >
-              <motion.h1 
-                className="font-heading font-extrabold leading-[1.1] tracking-tight text-white" 
-                style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)' }}
-                variants={fadeInUp}
-              >
-                Your Body Is Your
-                <motion.span 
-                  className="block text-primary mt-2"
-                  variants={fadeInUp}
-                >
-                  Greatest Project
-                </motion.span>
-              </motion.h1>
+              {/* Auto-sliding Hero Quotes */}
+              <div className="relative min-h-[200px] md:min-h-[250px] flex items-center justify-center">
+                {heroQuotes.map((quote, index) => (
+                  <motion.h1
+                    key={index}
+                    className="absolute font-heading font-extrabold leading-[1.1] tracking-tight text-white text-center w-full"
+                    style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)' }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{
+                      opacity: currentQuoteIndex === index ? 1 : 0,
+                      y: currentQuoteIndex === index ? 0 : 20,
+                      display: currentQuoteIndex === index ? "block" : "none"
+                    }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    data-testid={`hero-quote-${index}`}
+                  >
+                    {quote.line1}
+                    <span className="block text-primary mt-2">
+                      {quote.line2}
+                    </span>
+                  </motion.h1>
+                ))}
+              </div>
               
               {/* Typing Effect Subtext */}
               <motion.div 
