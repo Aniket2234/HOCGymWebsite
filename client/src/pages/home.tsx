@@ -855,35 +855,31 @@ export default function Home() {
 
       {/* Pricing Packages - Redesigned */}
       <AnimatedSection variant="slideInLeft">
-        <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden" id="pricing">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 dark:from-purple-950/20 dark:via-blue-950/20 dark:to-pink-950/20" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.15),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(236,72,153,0.15),transparent_50%)]" />
-        <div className="container px-4 md:px-6 relative">
-          <div className="text-center mb-12 md:mb-16">
+        <section className="h-screen bg-black flex items-center relative overflow-hidden" id="pricing">
+        <div className="w-full px-3 md:px-4 lg:px-6">
+          <div className="text-center mb-6 md:mb-8">
             <motion.div 
-              className="inline-block mb-5"
+              className="inline-block mb-3"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-full text-sm md:text-base font-bold shadow-lg shadow-purple-500/30">
+              <span className="bg-purple-600 text-white px-5 py-2 rounded-full text-xs md:text-sm font-bold">
                 Investment Plans
               </span>
             </motion.div>
             <motion.h2 
-              className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight"
+              className="font-heading text-2xl md:text-3xl lg:text-4xl font-extrabold mb-2 tracking-tight text-white"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 bg-clip-text text-transparent">
-                Transform Your Life Today
-              </span>
+              Transform Your Life Today
             </motion.h2>
             <motion.p 
-              className="text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto font-medium leading-relaxed"
+              className="text-sm md:text-base text-white/80 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -892,7 +888,7 @@ export default function Home() {
               Choose the perfect plan that fits your lifestyle and commit to your wellness journey
             </motion.p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 lg:gap-5 max-w-7xl mx-auto">
             {[
               {
                 name: "Starter",
@@ -906,12 +902,8 @@ export default function Home() {
                   "Access to All Class Types",
                   "Cardio, HIIT & Yoga Sessions",
                   "Strength & Aerobic Training",
-                  "Mindfulness & Meditation",
-                  "Community Support Access"
-                ],
-                gradient: "from-blue-500 to-cyan-500",
-                bgGradient: "from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30",
-                borderColor: "border-blue-200 dark:border-blue-800"
+                  "Mindfulness & Meditation"
+                ]
               },
               {
                 name: "Champion",
@@ -925,15 +917,9 @@ export default function Home() {
                   "Unlimited Class Variety",
                   "Advanced HIIT & Cardio",
                   "Body Sculpting & Pilates",
-                  "Functional Fitness Training",
-                  "Priority Trainer Support",
-                  "Progress Tracking System",
-                  "Exclusive Community Groups"
+                  "Priority Trainer Support"
                 ],
                 featured: true,
-                gradient: "from-purple-600 to-pink-600",
-                bgGradient: "from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30",
-                borderColor: "border-purple-300 dark:border-purple-700",
                 badge: "Best Value"
               },
               {
@@ -948,14 +934,8 @@ export default function Home() {
                   "Unlimited Class Access 24/7",
                   "All Premium Programs",
                   "VIP Trainer Support",
-                  "Flexible Schedule Options",
-                  "Lifetime Community Access",
-                  "Monthly Body Assessment",
-                  "Exclusive Wellness Workshops"
-                ],
-                gradient: "from-pink-600 to-rose-600",
-                bgGradient: "from-pink-50 to-rose-50 dark:from-pink-950/30 dark:to-rose-950/30",
-                borderColor: "border-pink-200 dark:border-pink-800"
+                  "Flexible Schedule Options"
+                ]
               },
             ].map((pkg, i) => (
               <motion.div
@@ -964,54 +944,52 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`${pkg.featured ? 'md:scale-105 lg:scale-110 z-10' : ''}`}
               >
-                <Card className={`group h-full p-6 md:p-7 hover-elevate transition-all duration-500 ${pkg.featured ? 'border-4 shadow-2xl' : 'border-2 shadow-lg'} ${pkg.borderColor} bg-gradient-to-br ${pkg.bgGradient} hover:shadow-2xl relative overflow-hidden`}>
-                  <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${pkg.gradient} ${pkg.featured ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity duration-500`} />
+                <Card className="group h-full p-4 md:p-5 hover-elevate transition-all duration-500 bg-white border-2 border-white/20 hover:border-white/40 hover:shadow-2xl relative overflow-hidden">
                   {pkg.featured && (
-                    <div className="absolute -right-12 -top-12 w-32 h-32 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl" />
+                    <div className="absolute -right-8 -top-8 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl" />
                   )}
-                  <CardContent className="p-0 space-y-5 md:space-y-6 relative">
+                  <CardContent className="p-0 space-y-3 md:space-y-4 relative">
                     {pkg.badge && (
-                      <div className={`inline-flex items-center gap-2 bg-gradient-to-r ${pkg.gradient} text-white px-4 py-2 rounded-full text-xs md:text-sm font-bold shadow-lg`}>
-                        <Star className="h-4 w-4 fill-white" />
+                      <div className="inline-flex items-center gap-1.5 bg-purple-600 text-white px-3 py-1.5 rounded-full text-xs font-bold">
+                        <Star className="h-3 w-3 fill-white" />
                         {pkg.badge}
                       </div>
                     )}
                     <div>
-                      <h3 className={`font-heading text-2xl md:text-3xl font-extrabold mb-2 bg-gradient-to-r ${pkg.gradient} bg-clip-text text-transparent`}>
+                      <h3 className="font-heading text-xl md:text-2xl font-extrabold mb-1 text-black">
                         {pkg.name}
                       </h3>
-                      <p className="text-slate-600 dark:text-slate-400 font-semibold text-sm md:text-base mb-1">{pkg.duration}</p>
-                      <p className="text-slate-500 dark:text-slate-500 text-xs md:text-sm italic">{pkg.description}</p>
+                      <p className="text-black/70 font-semibold text-xs md:text-sm mb-0.5">{pkg.duration}</p>
+                      <p className="text-black/60 text-xs italic">{pkg.description}</p>
                     </div>
-                    <div className="space-y-2">
-                      <div className={`font-heading text-4xl md:text-5xl font-black bg-gradient-to-r ${pkg.gradient} bg-clip-text text-transparent`}>
+                    <div className="space-y-1">
+                      <div className="font-heading text-3xl md:text-4xl font-black text-black">
                         {pkg.price}
                       </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs md:text-sm text-slate-500 dark:text-slate-400 font-medium">{pkg.classes}</span>
-                        <span className="text-xs text-slate-400">•</span>
-                        <span className={`text-xs md:text-sm font-bold bg-gradient-to-r ${pkg.gradient} bg-clip-text text-transparent`}>{pkg.pricePerClass}</span>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-xs text-black/60 font-medium">{pkg.classes}</span>
+                        <span className="text-xs text-black/40">•</span>
+                        <span className="text-xs font-bold text-black/80">{pkg.pricePerClass}</span>
                       </div>
                     </div>
-                    <div className="h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent" />
-                    <ul className="space-y-3">
+                    <div className="h-px bg-black/10" />
+                    <ul className="grid grid-cols-1 gap-2">
                       {pkg.features.map((feature, j) => (
-                        <li key={j} className="flex items-start gap-3 group/item">
-                          <div className={`h-5 w-5 rounded-full bg-gradient-to-r ${pkg.gradient} flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform`}>
-                            <CheckCircle2 className="h-3 w-3 text-white" />
+                        <li key={j} className="flex items-start gap-2 group/item">
+                          <div className="h-4 w-4 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <CheckCircle2 className="h-2.5 w-2.5 text-white" />
                           </div>
-                          <span className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-medium">{feature}</span>
+                          <span className="text-xs md:text-sm text-black/80 leading-tight font-medium">{feature}</span>
                         </li>
                       ))}
                     </ul>
                     <Button 
                       onClick={openWhatsApp} 
-                      className={`w-full rounded-full py-6 text-sm md:text-base font-bold transition-all duration-300 bg-gradient-to-r ${pkg.gradient} hover:opacity-90 text-white shadow-lg ${pkg.featured ? 'shadow-purple-500/50 hover:shadow-purple-500/70' : 'hover:shadow-xl'}`}
+                      className="w-full rounded-full py-4 md:py-5 text-xs md:text-sm font-bold transition-all duration-300 bg-black hover:bg-black/90 text-white"
                       data-testid={`button-select-${pkg.name.toLowerCase().replace(' ', '-')}`}
                     >
-                      <MessageCircle className="h-5 w-5 mr-2" />
+                      <MessageCircle className="h-4 w-4 mr-2" />
                       Start {pkg.name} Plan
                     </Button>
                   </CardContent>
@@ -1019,26 +997,6 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          <motion.div 
-            className="text-center mt-12 md:mt-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-4 font-medium">
-              Not sure which plan is right for you? Let's talk!
-            </p>
-            <Button 
-              onClick={openWhatsApp}
-              variant="outline"
-              size="lg"
-              className="rounded-full px-8 py-6 border-2 border-purple-300 dark:border-purple-700 hover:bg-gradient-to-r from-purple-600 to-pink-600 hover:text-white hover:border-transparent font-bold shadow-md"
-            >
-              <MessageCircle className="h-5 w-5 mr-2" />
-              Get Free Consultation
-            </Button>
-          </motion.div>
         </div>
         </section>
       </AnimatedSection>
