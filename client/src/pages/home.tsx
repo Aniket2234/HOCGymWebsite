@@ -674,70 +674,6 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      {/* Transformation Gallery */}
-      <AnimatedSection variant="slideInRight">
-        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="transformations">
-          <div className="w-full px-4 md:px-6 lg:px-8 relative">
-            <div className="text-center mb-10 md:mb-12 lg:mb-16">
-              <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                data-testid="heading-transformations"
-              >
-                Witness the Transformation
-              </motion.h2>
-              <motion.p 
-                className="text-sm md:text-base lg:text-lg text-white max-w-2xl mx-auto font-semibold"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                data-testid="text-transformations-subtitle"
-              >
-                From doubt to dedication, see how our members achieved their dream bodies
-              </motion.p>
-            </div>
-          <div className="w-full">
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={staggerContainer}
-            >
-              {[
-                { img: transform1, alt: "Fitness transformation 1", testId: "img-transformation-1" },
-                { img: transform2, alt: "Fitness transformation 2", testId: "img-transformation-2" },
-                { img: transform3, alt: "Fitness transformation 3", testId: "img-transformation-3" },
-                { img: transform4, alt: "Fitness transformation 4", testId: "img-transformation-4" },
-                { img: transform5, alt: "Fitness transformation 5", testId: "img-transformation-5" },
-                { img: transform6, alt: "Fitness transformation 6", testId: "img-transformation-6" },
-                { img: transform7, alt: "Fitness transformation 7", testId: "img-transformation-7" },
-                { img: transform8, alt: "Fitness transformation 8", testId: "img-transformation-8" }
-              ].map((item, idx) => (
-                <motion.div 
-                  key={idx}
-                  variants={scaleIn}
-                  className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary"
-                  data-testid={`card-transformation-${idx + 1}`}
-                >
-                  <img 
-                    src={item.img} 
-                    alt={item.alt} 
-                    className="w-full h-full object-cover"
-                    data-testid={item.testId}
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-        </section>
-      </AnimatedSection>
-
       {/* Instagram Videos Section */}
       <AnimatedSection variant="zoomRotate">
         <section className="py-12 md:py-16 bg-black relative overflow-hidden" id="instagram-videos">
@@ -829,6 +765,170 @@ export default function Home() {
                   house_of_champions_studio
                 </span>
               </a>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Transformation Gallery */}
+      <AnimatedSection variant="slideInRight">
+        <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="transformations">
+          <div className="w-full px-4 md:px-6 lg:px-8 relative">
+            <div className="text-center mb-10 md:mb-12 lg:mb-16">
+              <motion.h2 
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                data-testid="heading-transformations"
+              >
+                Witness the Transformation
+              </motion.h2>
+              <motion.p 
+                className="text-sm md:text-base lg:text-lg text-white max-w-2xl mx-auto font-semibold"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                data-testid="text-transformations-subtitle"
+              >
+                From doubt to dedication, see how our members achieved their dream bodies
+              </motion.p>
+            </div>
+          <div className="w-full">
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+            >
+              {[
+                { img: transform1, alt: "Fitness transformation 1", testId: "img-transformation-1" },
+                { img: transform2, alt: "Fitness transformation 2", testId: "img-transformation-2" },
+                { img: transform3, alt: "Fitness transformation 3", testId: "img-transformation-3" },
+                { img: transform4, alt: "Fitness transformation 4", testId: "img-transformation-4" },
+                { img: transform5, alt: "Fitness transformation 5", testId: "img-transformation-5" },
+                { img: transform6, alt: "Fitness transformation 6", testId: "img-transformation-6" },
+                { img: transform7, alt: "Fitness transformation 7", testId: "img-transformation-7" },
+                { img: transform8, alt: "Fitness transformation 8", testId: "img-transformation-8" }
+              ].map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  variants={scaleIn}
+                  className="relative rounded-lg overflow-hidden shadow-lg border-2 border-primary"
+                  data-testid={`card-transformation-${idx + 1}`}
+                >
+                  <img 
+                    src={item.img} 
+                    alt={item.alt} 
+                    className="w-full h-full object-cover"
+                    data-testid={item.testId}
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Training Programs - Redesigned */}
+      <AnimatedSection variant="slideUp">
+        <section id="program" className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" data-testid="section-training-programs">
+          <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
+            <div className="text-center mb-10 md:mb-12 lg:mb-16">
+              <motion.h2 
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                data-testid="heading-training-programs"
+              >
+                Our Training Programs
+              </motion.h2>
+              <motion.p 
+                className="text-sm md:text-base lg:text-lg text-white max-w-2xl mx-auto font-semibold"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                data-testid="text-training-programs-subtitle"
+              >
+                Comprehensive programs for every fitness level and goal
+              </motion.p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {[
+                { 
+                  image: cardioTrainingImage, 
+                  title: "Cardio Training", 
+                  desc: "Improves heart health and endurance (e.g., treadmill, cycling, HIIT).",
+                  testId: "card-cardio-training"
+                },
+                { 
+                  image: strengthTrainingImage, 
+                  title: "Strength Training", 
+                  desc: "Builds muscle and overall strength (e.g., free weights, machines).",
+                  testId: "card-strength-training"
+                },
+                { 
+                  image: flexibilityTrainingImage, 
+                  title: "Flexibility & Mobility Training", 
+                  desc: "Enhances joint movement and reduces injury (e.g., stretching, yoga).",
+                  testId: "card-flexibility-training"
+                },
+                { 
+                  image: coreTrainingImage, 
+                  title: "Core Training", 
+                  desc: "Strengthens abs, obliques, and lower back (e.g., planks, crunches).",
+                  testId: "card-core-training"
+                },
+                { 
+                  image: functionalTrainingImage, 
+                  title: "Functional Training", 
+                  desc: "Focuses on movements for daily life activities (e.g., kettlebells, TRX, bodyweight drills).",
+                  testId: "card-functional-training"
+                },
+                { 
+                  image: balanceTrainingImage, 
+                  title: "Balance & Stability Training", 
+                  desc: "Improves coordination and posture (e.g., balance boards, Bosu ball exercises).",
+                  testId: "card-balance-training"
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="flex"
+                >
+                  <Card className="group overflow-hidden hover-elevate bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-primary flex flex-col w-full" data-testid={item.testId}>
+                    <div className="relative h-56 md:h-64 w-full overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+                      <img 
+                        src={item.image} 
+                        alt={item.title}
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                        data-testid={`img-${item.testId}`}
+                      />
+                    </div>
+                    <CardContent className="p-5 md:p-6 space-y-2 flex-1 flex flex-col">
+                      <h3 className="font-heading text-lg md:text-xl lg:text-2xl font-bold text-black" data-testid={`heading-${item.testId}`}>
+                        {item.title}
+                      </h3>
+                      <p className="text-black leading-relaxed text-sm md:text-base flex-1" data-testid={`text-${item.testId}`}>
+                        {item.desc}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -938,106 +1038,6 @@ export default function Home() {
                   Join Any Class, Any Time, Any Day
                 </button>
               </div>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
-
-      {/* Training Programs - Redesigned */}
-      <AnimatedSection variant="slideUp">
-        <section id="program" className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" data-testid="section-training-programs">
-          <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
-            <div className="text-center mb-10 md:mb-12 lg:mb-16">
-              <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                data-testid="heading-training-programs"
-              >
-                Our Training Programs
-              </motion.h2>
-              <motion.p 
-                className="text-sm md:text-base lg:text-lg text-white max-w-2xl mx-auto font-semibold"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                data-testid="text-training-programs-subtitle"
-              >
-                Comprehensive programs for every fitness level and goal
-              </motion.p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {[
-                { 
-                  image: cardioTrainingImage, 
-                  title: "Cardio Training", 
-                  desc: "Improves heart health and endurance (e.g., treadmill, cycling, HIIT).",
-                  testId: "card-cardio-training"
-                },
-                { 
-                  image: strengthTrainingImage, 
-                  title: "Strength Training", 
-                  desc: "Builds muscle and overall strength (e.g., free weights, machines).",
-                  testId: "card-strength-training"
-                },
-                { 
-                  image: flexibilityTrainingImage, 
-                  title: "Flexibility & Mobility Training", 
-                  desc: "Enhances joint movement and reduces injury (e.g., stretching, yoga).",
-                  testId: "card-flexibility-training"
-                },
-                { 
-                  image: coreTrainingImage, 
-                  title: "Core Training", 
-                  desc: "Strengthens abs, obliques, and lower back (e.g., planks, crunches).",
-                  testId: "card-core-training"
-                },
-                { 
-                  image: functionalTrainingImage, 
-                  title: "Functional Training", 
-                  desc: "Focuses on movements for daily life activities (e.g., kettlebells, TRX, bodyweight drills).",
-                  testId: "card-functional-training"
-                },
-                { 
-                  image: balanceTrainingImage, 
-                  title: "Balance & Stability Training", 
-                  desc: "Improves coordination and posture (e.g., balance boards, Bosu ball exercises).",
-                  testId: "card-balance-training"
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="flex"
-                >
-                  <Card className="group overflow-hidden hover-elevate bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-primary flex flex-col w-full" data-testid={item.testId}>
-                    <div className="relative h-56 md:h-64 w-full overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
-                      <img 
-                        src={item.image} 
-                        alt={item.title}
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                        data-testid={`img-${item.testId}`}
-                      />
-                    </div>
-                    <CardContent className="p-5 md:p-6 space-y-2 flex-1 flex flex-col">
-                      <h3 className="font-heading text-lg md:text-xl lg:text-2xl font-bold text-black" data-testid={`heading-${item.testId}`}>
-                        {item.title}
-                      </h3>
-                      <p className="text-black leading-relaxed text-sm md:text-base flex-1" data-testid={`text-${item.testId}`}>
-                        {item.desc}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
             </div>
           </div>
         </section>
