@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
@@ -91,10 +91,81 @@ import zumbaBanner from "@assets/class_banners/zumba.png";
 import yogaBanner from "@assets/class_banners/yoga.png";
 import aerobicsBanner from "@assets/class_banners/aerobics.png";
 import cardioBanner from "@assets/class_banners/cardio.png";
+import whatsappIcon from "@assets/whatsapp.svg";
 
 const WHATSAPP_NUMBER = "918600126395";
 const PHONE_NUMBER = "+91 8600126395";
 const GOOGLE_REVIEWS_URL = "https://share.google/BOqrkzB7sb4X33Iy0";
+
+// Stats configuration
+const STATS_DATA = [
+  { value: 1250, label: "Clients Transformed", suffix: "+" },
+  { value: 40, label: "Smart Machines", suffix: "+" },
+  { value: 18, label: "Certified Coaches", suffix: "" },
+  { value: 32000, label: "Training Hours", suffix: "+" },
+];
+
+// Animated counter hook
+function useCountUp(target: number, isInView: boolean, duration = 2000) {
+  const [count, setCount] = useState(0);
+  const startTimeRef = useRef<number | null>(null);
+  const frameRef = useRef<number>();
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const animate = (currentTime: number) => {
+      if (!startTimeRef.current) {
+        startTimeRef.current = currentTime;
+      }
+
+      const elapsed = currentTime - startTimeRef.current;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Ease-out function for smooth animation
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const currentCount = Math.floor(easeOut * target);
+
+      setCount(currentCount);
+
+      if (progress < 1) {
+        frameRef.current = requestAnimationFrame(animate);
+      }
+    };
+
+    frameRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (frameRef.current) {
+        cancelAnimationFrame(frameRef.current);
+      }
+    };
+  }, [target, isInView, duration]);
+
+  return count;
+}
+
+// StatCard component
+function StatCard({ value, label, suffix, index }: { value: number; label: string; suffix: string; index: number }) {
+  const { ref, isInView } = useInView({ threshold: 0.3 });
+  const count = useCountUp(value, isInView);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="text-center p-4"
+    >
+      <div className="text-3xl md:text-4xl font-bold text-primary mb-1" data-testid={`text-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
+        {count.toLocaleString()}{suffix}
+      </div>
+      <div className="text-sm md:text-base text-white/80 font-medium">{label}</div>
+    </motion.div>
+  );
+}
 
 export default function Home() {
   const { toast } = useToast();
@@ -447,7 +518,7 @@ export default function Home() {
       {/* About House of Champions */}
       <AnimatedSection variant="fadeIn">
         <section className="py-12 md:py-16 lg:py-20 bg-black relative overflow-hidden" id="about">
-          <div className="container px-4 md:px-6 relative max-w-7xl mx-auto">
+          <div className="w-full px-6 md:px-12 lg:px-16 relative mx-auto">
             <div className="text-center mb-10 md:mb-12">
               <motion.h2 
                 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-primary"
@@ -471,9 +542,9 @@ export default function Home() {
               </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-12 mb-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.75fr] gap-8 md:gap-12 lg:gap-16 mb-12 items-start max-w-7xl mx-auto">
               {/* Left Side: Our Story and Our Vision */}
-              <div className="space-y-10 lg:space-y-12 max-w-2xl">
+              <div className="space-y-10 lg:space-y-12">
                 {/* Our Story */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -524,6 +595,21 @@ export default function Home() {
                     </div>
                   </div>
                 </motion.div>
+
+                {/* Impact Statistics */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="rounded-xl bg-white/5 border border-primary/20 p-6"
+                >
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {STATS_DATA.map((stat, index) => (
+                      <StatCard key={stat.label} {...stat} index={index} />
+                    ))}
+                  </div>
+                </motion.div>
               </div>
 
               {/* Right Side: Owner Photo and Founder Info */}
@@ -532,7 +618,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="flex flex-col items-start space-y-6 max-w-sm lg:pl-6"
+                className="flex flex-col items-start space-y-6"
               >
                 {/* Owner Photo */}
                 <div className="w-full">
@@ -1726,11 +1812,11 @@ export default function Home() {
           {/* Floating Button */}
           <button
             onClick={() => setContactMenuOpen(!contactMenuOpen)}
-            className="h-16 w-16 rounded-full bg-black hover:bg-black/90 text-white shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center"
+            className="h-16 w-16 rounded-full shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center overflow-hidden"
             aria-label="Contact Us"
             data-testid="button-floating-contact"
           >
-            <MessageCircle className="h-7 w-7 text-white" />
+            <img src={whatsappIcon} alt="WhatsApp" className="h-full w-full object-cover" />
           </button>
         </div>
       </div>
